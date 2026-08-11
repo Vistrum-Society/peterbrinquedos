@@ -1,0 +1,358 @@
+<title>Vovó Vaci · Conceito Visual</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+  :root{
+    --paper:#FBF5EB; --surface:#FFFFFF; --ink:#2A211A; --muted:#8A7A68;
+    --line:#EADECB; --board:#8E2A22; --board-2:#A6382D;
+    --wood:#6E4426; --marigold:#E0A13A; --leaf:#5C7A52; --coral:#C0563F;
+    --prod:#8E2A22; --trad:#6E4426; --proof:#5C7A52; --conv:#E0A13A;
+    --shadow:0 18px 40px -20px rgba(142,42,34,.45);
+    --radius:18px;
+    --serif:Georgia,"Times New Roman",serif;
+    --sans:"Segoe UI",system-ui,-apple-system,"Helvetica Neue",Arial,sans-serif;
+  }
+  :root:not([data-theme="light"]){}
+  @media (prefers-color-scheme:dark){
+    :root:not([data-theme="light"]){
+      --paper:#1A1412; --surface:#241B18; --ink:#F1E6D8; --muted:#B0A091;
+      --line:#3A2C26; --board:#7A241F; --board-2:#8E2A22;
+      --wood:#C08A55; --marigold:#EDB755; --leaf:#84A277; --coral:#D9755C;
+      --prod:#C24A3E; --trad:#C08A55; --proof:#84A277; --conv:#EDB755;
+      --shadow:0 18px 44px -22px rgba(0,0,0,.7);
+    }
+  }
+  :root[data-theme="dark"]{
+    --paper:#1A1412; --surface:#241B18; --ink:#F1E6D8; --muted:#B0A091;
+    --line:#3A2C26; --board:#7A241F; --board-2:#8E2A22;
+    --wood:#C08A55; --marigold:#EDB755; --leaf:#84A277; --coral:#D9755C;
+    --prod:#C24A3E; --trad:#C08A55; --proof:#84A277; --conv:#EDB755;
+    --shadow:0 18px 44px -22px rgba(0,0,0,.7);
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);
+    line-height:1.55;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 22px}
+  .eyebrow{font-size:12px;letter-spacing:.16em;text-transform:uppercase;font-weight:700;color:var(--wood)}
+  h2{font-family:var(--serif);font-weight:700;font-size:clamp(24px,3.4vw,36px);
+    line-height:1.1;margin:.2em 0 .3em;text-wrap:balance}
+  h3{font-size:15px;letter-spacing:.02em;margin:0 0 4px}
+  p{margin:0 0 12px;max-width:62ch}
+  .lead{font-size:18px;color:var(--muted)}
+  section{padding:64px 0;border-top:1px solid var(--line)}
+  .toggle{position:fixed;top:16px;right:16px;z-index:20;border:1px solid var(--line);
+    background:var(--surface);color:var(--ink);border-radius:999px;padding:8px 14px;
+    font:600 13px var(--sans);cursor:pointer;box-shadow:var(--shadow)}
+  .toggle:focus-visible{outline:2px solid var(--marigold);outline-offset:2px}
+
+  /* HERO */
+  .hero{background:
+      radial-gradient(120% 90% at 85% -10%, var(--board-2), transparent 60%),
+      var(--board);
+    color:#F7EFE1;border-top:none;position:relative;overflow:hidden}
+  .hero:before{content:"";position:absolute;inset:0;opacity:.07;
+    background-image:radial-gradient(#fff 1.4px,transparent 1.5px);
+    background-size:24px 24px;pointer-events:none}
+  .hero .wrap{position:relative;padding-top:88px;padding-bottom:76px}
+  .hero .eyebrow{color:var(--marigold)}
+  .hero h1{font-family:var(--serif);font-weight:700;font-size:clamp(30px,5.2vw,56px);
+    line-height:1.05;margin:.25em 0 .35em;max-width:16ch;text-wrap:balance}
+  .hero h1 em{font-style:italic;color:var(--marigold)}
+  .hero p{color:#F1D9C6;font-size:clamp(16px,2vw,20px);max-width:52ch}
+  .chiprow{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}
+  .chip{font-size:13px;font-weight:600;padding:6px 12px;border-radius:999px;
+    background:rgba(255,255,255,.10);border:1px solid rgba(255,255,255,.20);color:#F7EFE1}
+
+  /* PROFILE MOCKUP */
+  .split{display:grid;grid-template-columns:320px 1fr;gap:44px;align-items:start}
+  @media(max-width:860px){.split{grid-template-columns:1fr;gap:32px}}
+  .phone{background:var(--surface);border:1px solid var(--line);border-radius:30px;
+    box-shadow:var(--shadow);overflow:hidden;max-width:340px;margin:0 auto;width:100%}
+  .ph-top{display:flex;align-items:center;justify-content:space-between;padding:12px 16px;
+    border-bottom:1px solid var(--line);font-weight:700}
+  .ph-top small{font-weight:600;color:var(--muted)}
+  .ph-body{padding:16px}
+  .ph-head{display:flex;gap:18px;align-items:center}
+  .avatar{width:74px;height:74px;border-radius:50%;flex:0 0 auto;display:grid;place-items:center;
+    font-size:34px;background:radial-gradient(circle at 30% 25%,#fff3,transparent 60%),var(--board);
+    border:3px solid var(--surface);box-shadow:0 0 0 2px var(--marigold)}
+  .stats{display:flex;gap:16px;text-align:center;flex:1;justify-content:space-around}
+  .stats b{display:block;font-size:16px}
+  .stats span{font-size:11px;color:var(--muted)}
+  .ph-name{font-weight:700;margin-top:12px;font-size:14px}
+  .ph-bio{font-size:13px;color:var(--ink);margin-top:2px;line-height:1.5}
+  .ph-bio .k{color:var(--wood);font-weight:600}
+  .btns{display:flex;gap:6px;margin-top:12px}
+  .btns button{flex:1;border:none;border-radius:9px;padding:7px 0;font:600 12px var(--sans);cursor:default}
+  .b-follow{background:var(--board);color:#fff}
+  .b-msg{background:var(--line);color:var(--ink)}
+  .b-wa{background:var(--leaf);color:#fff}
+  .hl{display:flex;gap:14px;margin-top:16px;overflow:hidden}
+  .hl div{text-align:center;font-size:10px;color:var(--muted);width:52px}
+  .hl i{display:block;width:52px;height:52px;border-radius:50%;margin-bottom:4px;
+    display:grid;place-items:center;font-style:normal;font-size:20px;
+    border:1px solid var(--line);background:var(--board);color:#F7EFE1}
+  .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:3px;margin-top:14px}
+  .cell{aspect-ratio:1;border-radius:6px;display:flex;flex-direction:column;justify-content:space-between;
+    padding:7px;color:#fff;font-size:9px;font-weight:600;line-height:1.2;overflow:hidden}
+  .cell .em{font-size:22px;line-height:1;align-self:flex-end}
+  .cell .tt{text-shadow:0 1px 2px rgba(0,0,0,.35)}
+  .c-prod{background:var(--prod)} .c-trad{background:var(--trad)}
+  .c-proof{background:var(--proof)} .c-conv{background:var(--conv);color:#3a2a08}
+
+  .callouts{display:flex;flex-direction:column;gap:14px}
+  .callout{display:flex;gap:12px;align-items:flex-start}
+  .callout .n{flex:0 0 auto;width:26px;height:26px;border-radius:7px;background:var(--board);color:#fff;
+    display:grid;place-items:center;font-weight:700;font-size:13px}
+  .callout p{margin:0;font-size:14px}
+  .callout b{font-size:14px}
+  .mono{font-family:ui-monospace,"SFMono-Regular",Consolas,monospace;font-size:13px;
+    background:var(--paper);border:1px solid var(--line);border-radius:8px;padding:3px 7px;display:inline-block}
+
+  /* PILLARS */
+  .legend{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:8px}
+  @media(max-width:760px){.legend{grid-template-columns:repeat(2,1fr)}}
+  .pill{border:1px solid var(--line);border-radius:14px;padding:16px;background:var(--surface)}
+  .dot{width:12px;height:12px;border-radius:50%;display:inline-block;margin-right:7px;vertical-align:middle}
+  .pill h3{display:flex;align-items:center;font-size:14px}
+  .pill p{font-size:13px;color:var(--muted);margin:6px 0 0}
+  .pill .pct{font-family:var(--serif);font-size:26px;font-weight:700;margin-top:8px}
+
+  /* TEMPLATES */
+  .tpls{display:grid;grid-template-columns:1fr 1fr;gap:26px}
+  @media(max-width:760px){.tpls{grid-template-columns:1fr}}
+  .tpl-cap{font-size:13px;color:var(--muted);margin-top:10px}
+  .carousel{aspect-ratio:4/5;border-radius:16px;background:var(--board);color:#F7EFE1;
+    padding:26px;display:flex;flex-direction:column;justify-content:space-between;box-shadow:var(--shadow);position:relative;overflow:hidden}
+  .carousel:before{content:"";position:absolute;inset:0;opacity:.08;
+    background-image:radial-gradient(#fff 1.4px,transparent 1.5px);
+    background-size:22px 22px}
+  .carousel .kick{position:relative;font-size:12px;letter-spacing:.15em;text-transform:uppercase;color:var(--marigold);font-weight:700}
+  .carousel .big{position:relative;font-family:var(--serif);font-size:clamp(22px,3vw,30px);line-height:1.12}
+  .carousel .big u{text-decoration-color:var(--marigold);text-underline-offset:4px}
+  .carousel .foot{position:relative;display:flex;align-items:center;gap:8px;font-size:13px;color:#F1D9C6}
+  .carousel .foot i{font-style:normal}
+  .reel{aspect-ratio:9/16;max-height:520px;border-radius:16px;color:#fff;padding:22px;
+    display:flex;flex-direction:column;justify-content:space-between;box-shadow:var(--shadow);
+    background:linear-gradient(200deg,var(--wood),#3f2713 85%);position:relative;overflow:hidden}
+  .reel .tag{align-self:flex-start;background:rgba(0,0,0,.28);border-radius:999px;padding:5px 11px;font-size:12px;font-weight:600}
+  .reel .hook{font-family:var(--serif);font-size:clamp(20px,2.6vw,26px);line-height:1.15;text-shadow:0 2px 10px rgba(0,0,0,.35)}
+  .reel .hook b{background:var(--marigold);color:#3a2a08;padding:0 6px;border-radius:4px;box-decoration-break:clone;-webkit-box-decoration-break:clone}
+  .reel .cc{align-self:center;font-size:12px;background:rgba(0,0,0,.3);padding:5px 12px;border-radius:8px}
+  .reel .big-em{position:absolute;right:-10px;bottom:64px;font-size:120px;opacity:.28;filter:saturate(.7)}
+
+  /* IDENTITY */
+  .swatches{display:grid;grid-template-columns:repeat(5,1fr);gap:12px}
+  @media(max-width:640px){.swatches{grid-template-columns:repeat(2,1fr)}}
+  .sw{border:1px solid var(--line);border-radius:12px;overflow:hidden;background:var(--surface)}
+  .sw .chip{height:76px}
+  .sw .meta{padding:9px 11px}
+  .sw b{font-size:13px;display:block}
+  .sw span{font-size:11px;color:var(--muted);font-family:ui-monospace,Consolas,monospace}
+  .type-spec{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:26px}
+  @media(max-width:640px){.type-spec{grid-template-columns:1fr}}
+  .type-card{border:1px solid var(--line);border-radius:14px;padding:20px;background:var(--surface)}
+  .type-card .big{font-family:var(--serif);font-size:34px;line-height:1.05}
+  .type-card .lbl{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--wood);font-weight:700;margin-bottom:8px}
+  .type-card .body-sample{font-family:var(--sans);font-size:15px;color:var(--muted)}
+
+  /* BEFORE / AFTER */
+  .ba{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+  @media(max-width:640px){.ba{grid-template-columns:1fr}}
+  .ba .col{border:1px solid var(--line);border-radius:16px;padding:22px;background:var(--surface)}
+  .ba .col.after{border-color:var(--board);box-shadow:var(--shadow)}
+  .ba h3{font-family:var(--serif);font-size:19px;margin-bottom:12px}
+  .ba ul{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:10px}
+  .ba li{font-size:14px;padding-left:24px;position:relative;color:var(--ink)}
+  .ba .before li:before{content:"—";position:absolute;left:0;color:var(--muted)}
+  .ba .after li:before{content:"✓";position:absolute;left:0;color:var(--board);font-weight:700}
+  .ba .before{opacity:.85}
+
+  footer{padding:40px 0 70px;color:var(--muted);font-size:13px}
+  .note{font-size:12px;color:var(--muted);margin-top:26px;max-width:70ch}
+</style>
+
+<button class="toggle" id="tg" aria-label="Alternar tema">Tema</button>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="eyebrow">Conceito visual · Proposta para alinhamento</div>
+    <h1>87 anos de sabor caseiro, agora <em>reconhecíveis em 5 segundos</em>.</h1>
+    <p>Uma direção de marca para a Vovó Vaci crescer no digital sem perder o que já a torna querida: tradição, comida de verdade e o rosto da Vovó.</p>
+    <div class="chiprow">
+      <span class="chip">Caseira, não industrial</span>
+      <span class="chip">Com rosto, não genérica</span>
+      <span class="chip">Água na boca em primeiro lugar</span>
+    </div>
+  </div>
+</header>
+
+<section>
+  <div class="wrap">
+    <div class="eyebrow">O novo perfil</div>
+    <h2>O perfil vira a primeira mesa</h2>
+    <p class="lead">A decisão de seguir ou sair acontece em 5 segundos. Cada elemento passa a trabalhar por vocês: o nome já diz o que é e onde fica, a bio abre a porta com o cheiro do pão, e o WhatsApp fica a um toque.</p>
+    <div class="split" style="margin-top:26px">
+      <div class="phone" role="img" aria-label="Simulação do perfil do Instagram da Vovó Vaci redesenhado">
+        <div class="ph-top">vovovaci_panificadora <small>•••</small></div>
+        <div class="ph-body">
+          <div class="ph-head">
+            <div class="avatar">🥖</div>
+            <div class="stats">
+              <div><b>292</b><span>posts</span></div>
+              <div><b>4.827</b><span>seguidores</span></div>
+              <div><b>746</b><span>seguindo</span></div>
+            </div>
+          </div>
+          <div class="ph-name">Vovó Vaci · Padaria em Itumbiara</div>
+          <div class="ph-bio">
+            87 anos de sabor caseiro, feito como a Vovó faz 🧡<br>
+            <span class="k">🥖 Pão quentinho · ☕ Café colonial · 🍽️ Almoço seg–sáb</span><br>
+            📍 Itumbiara-GO · Fazemos entregas<br>
+            Peça no WhatsApp ↓
+          </div>
+          <div class="btns">
+            <button class="b-follow">Seguir</button>
+            <button class="b-msg">Mensagem</button>
+            <button class="b-wa">WhatsApp</button>
+          </div>
+          <div class="hl">
+            <div><i>👵</i>A Vovó</div>
+            <div><i>☕</i>Café colonial</div>
+            <div><i>🍽️</i>Almoço</div>
+            <div><i>🥖</i>Pães</div>
+            <div><i>📲</i>Como pedir</div>
+          </div>
+          <div class="grid3">
+            <div class="cell c-prod"><span class="tt">Pão saindo do forno</span><span class="em">🥖</span></div>
+            <div class="cell c-trad"><span class="tt">A Vovó, 87 anos</span><span class="em">👵</span></div>
+            <div class="cell c-conv"><span class="tt">Café colonial de sábado</span><span class="em">☕</span></div>
+            <div class="cell c-prod"><span class="tt">Almoço de hoje</span><span class="em">🍽️</span></div>
+            <div class="cell c-proof"><span class="tt">Cliente favorito</span><span class="em">🧡</span></div>
+            <div class="cell c-trad"><span class="tt">Bastidor da cozinha</span><span class="em">👩‍🍳</span></div>
+            <div class="cell c-conv"><span class="tt">Encomendas de festa</span><span class="em">🎂</span></div>
+            <div class="cell c-prod"><span class="tt">Sanduíche natural</span><span class="em">🥪</span></div>
+            <div class="cell c-proof"><span class="tt">Movimento da loja</span><span class="em">😊</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="callouts">
+        <div class="callout"><span class="n">1</span><div><b>Nome com cidade e categoria</b><p>“Padaria em Itumbiara” aparece na busca do Google e do Instagram. Um vizinho procurando padaria encontra a Vovó Vaci antes da concorrência.</p></div></div>
+        <div class="callout"><span class="n">2</span><div><b>Bio que abre a porta</b><p>O trunfo (87 anos, a Vovó), o que se come, onde fica e o próximo passo, em quatro linhas. Com o WhatsApp como destino.</p></div></div>
+        <div class="callout"><span class="n">3</span><div><b>Destaques como um mapa</b><p><span class="mono">A Vovó</span> <span class="mono">Café colonial</span> <span class="mono">Almoço</span> <span class="mono">Pães</span> <span class="mono">Como pedir</span> levam o visitante direto para o que ele quer.</p></div></div>
+        <div class="callout"><span class="n">4</span><div><b>Feed com propósito</b><p>Cada cor é um tipo de conteúdo. Nada aleatório: o feed vira uma vitrine que dá fome, não uma colcha de retalhos de templates.</p></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="eyebrow">O sistema de conteúdo</div>
+    <h2>Quatro pilares, um só assunto: o gosto de casa</h2>
+    <p class="lead">O algoritmo em 2026 premia consistência de nicho e conteúdo humano (o “Year of Raw Content”). Mantemos 80% em torno de comida + a Vovó, distribuídos em quatro funções, cada uma com um trabalho claro.</p>
+    <div class="legend">
+      <div class="pill"><h3><span class="dot" style="background:var(--prod)"></span>Produto que dá fome</h3><p>Pão quentinho, café colonial, almoço do dia, tortas. Close, vapor, textura. Gera vontade e visita.</p><div class="pct" style="color:var(--prod)">35%</div></div>
+      <div class="pill"><h3><span class="dot" style="background:var(--trad)"></span>Tradição &amp; gente</h3><p>A Vovó, a equipe, os bastidores da cozinha. O conteúdo cru e humano que constrói vínculo.</p><div class="pct" style="color:var(--trad)">30%</div></div>
+      <div class="pill"><h3><span class="dot" style="background:var(--proof)"></span>Prova &amp; comunidade</h3><p>Clientes, depoimentos, o movimento da loja. A prova de que a cidade já ama a Vovó Vaci.</p><div class="pct" style="color:var(--proof)">15%</div></div>
+      <div class="pill"><h3><span class="dot" style="background:var(--conv)"></span>Conversão</h3><p>Café colonial de sábado, encomendas, cardápio, entregas. O menor pilar, porque os outros três é que fazem vender.</p><div class="pct" style="color:var(--conv)">20%</div></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="eyebrow">Os templates</div>
+    <h2>Modelos que qualquer post herda</h2>
+    <p class="lead">Um sistema visual pronto: o carrossel de história e a capa de Reels. Consistência de marca sem retrabalho a cada peça, e o fim dos templates soltos de fornecedor.</p>
+    <div class="tpls" style="margin-top:24px">
+      <div>
+        <div class="carousel">
+          <div class="kick">A história da Vovó</div>
+          <div class="big">87 anos de <u>gosto de casa</u>, contados em 6 fotos.</div>
+          <div class="foot"><i>👵</i> Deslize · e marca quem ama a Vovó Vaci</div>
+        </div>
+        <p class="tpl-cap">Carrossel 4:5 · pilar Tradição &amp; gente · meta de send</p>
+      </div>
+      <div>
+        <div class="reel">
+          <span class="tag">▶ Reels · 12s</span>
+          <div class="big-em" aria-hidden="true">🥖</div>
+          <div class="hook">O pão que <b>sai quentinho</b> às 6h da manhã em Itumbiara.</div>
+          <div class="cc">Marca quem você traria pra tomar café</div>
+        </div>
+        <p class="tpl-cap">Capa de Reels 9:16 · pilar Produto · gancho nos 3 primeiros segundos</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="eyebrow">A identidade</div>
+    <h2>Uma paleta de padaria de verdade</h2>
+    <p class="lead">Vermelho-Vaci da própria marca, café-crosta para o calor, dourado-manteiga para o convite, verde-erva para o fresco. Longe do industrial, perto da cozinha da avó.</p>
+    <div class="swatches" style="margin-top:24px">
+      <div class="sw"><div class="chip" style="background:#8E2A22"></div><div class="meta"><b>Vermelho-Vaci</b><span>#8E2A22</span></div></div>
+      <div class="sw"><div class="chip" style="background:#6E4426"></div><div class="meta"><b>Café-crosta</b><span>#6E4426</span></div></div>
+      <div class="sw"><div class="chip" style="background:#E0A13A"></div><div class="meta"><b>Dourado-manteiga</b><span>#E0A13A</span></div></div>
+      <div class="sw"><div class="chip" style="background:#5C7A52"></div><div class="meta"><b>Verde-erva</b><span>#5C7A52</span></div></div>
+      <div class="sw"><div class="chip" style="background:#FBF5EB;border-top:1px solid var(--line)"></div><div class="meta"><b>Creme-pão</b><span>#FBF5EB</span></div></div>
+    </div>
+    <div class="type-spec">
+      <div class="type-card">
+        <div class="lbl">Títulos · voz da casa</div>
+        <div class="big">Feito como a Vovó faz</div>
+        <p style="margin:.5em 0 0;color:var(--muted);font-size:13px">Serifada, calorosa, editorial. Transmite tradição sem virar antiquada.</p>
+      </div>
+      <div class="type-card">
+        <div class="lbl">Corpo · clareza</div>
+        <div class="body-sample">Pão saindo do forno às 6h, café passado na hora e o almoço no capricho de segunda a sábado. Vem tomar café com a gente.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="eyebrow">O que muda</div>
+    <h2>De feed de retalhos a marca querida</h2>
+    <div class="ba" style="margin-top:22px">
+      <div class="col before">
+        <h3>Hoje</h3>
+        <ul>
+          <li>Cada post parece de uma marca diferente (dourado, azul, preto, trends)</li>
+          <li>Feed vive de meme e trend que não vende pão</li>
+          <li>O maior trunfo (a Vovó, 87 anos) quase não aparece</li>
+          <li>Nome e bio não ajudam quem busca padaria em Itumbiara</li>
+        </ul>
+      </div>
+      <div class="col after">
+        <h3>Com a nova direção</h3>
+        <ul>
+          <li>Uma identidade só: paleta e tipografia reconhecíveis em 5 segundos</li>
+          <li>Feed que dá fome e conta a história da casa</li>
+          <li>A Vovó vira o coração da marca, o que a concorrência não copia</li>
+          <li>Perfil achável no Google + WhatsApp a um toque</li>
+        </ul>
+      </div>
+    </div>
+    <p class="note">Conceito de direção visual para apresentação. Os números do perfil são reais (agosto/2026); cores, ícones e mockups são ilustrativos. A versão final usa a identidade e as fotos reais da Vovó Vaci após o alinhamento.</p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">Vovó Vaci × Vistrum · conceito visual · agosto de 2026</div>
+</footer>
+
+<script>
+  (function(){
+    var b=document.getElementById('tg');
+    function cur(){var s=document.documentElement.getAttribute('data-theme');
+      if(s)return s;return window.matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light';}
+    b.addEventListener('click',function(){
+      var next=cur()==='dark'?'light':'dark';
+      document.documentElement.setAttribute('data-theme',next);
+    });
+  })();
+</script>
