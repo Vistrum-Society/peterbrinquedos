@@ -1,0 +1,357 @@
+<title>Peter Brinquedos · Conceito Visual</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+  :root{
+    --paper:#FBF8F2; --surface:#FFFFFF; --ink:#233240; --muted:#6E7A80;
+    --line:#E7E0D3; --board:#1E3A34; --board-2:#2A5049;
+    --wood:#C98A4B; --marigold:#E9A62E; --sky:#2F7DA8; --coral:#E0674F;
+    --edu:#2A5049; --bts:#C98A4B; --proof:#2F7DA8; --conv:#E9A62E;
+    --shadow:0 18px 40px -20px rgba(30,58,52,.45);
+    --radius:18px;
+    --serif:Georgia,"Times New Roman",serif;
+    --sans:"Segoe UI",system-ui,-apple-system,"Helvetica Neue",Arial,sans-serif;
+  }
+  :root:not([data-theme="light"]){}
+  @media (prefers-color-scheme:dark){
+    :root:not([data-theme="light"]){
+      --paper:#141A19; --surface:#1C2523; --ink:#EAE6DC; --muted:#9AA6A2;
+      --line:#2C3936; --board:#12211E; --board-2:#1E3A34;
+      --wood:#D69A5C; --marigold:#F0B54A; --sky:#5AA6CE; --coral:#E88068;
+      --edu:#6FB3A6; --bts:#D69A5C; --proof:#5AA6CE; --conv:#F0B54A;
+      --shadow:0 18px 44px -22px rgba(0,0,0,.7);
+    }
+  }
+  :root[data-theme="dark"]{
+    --paper:#141A19; --surface:#1C2523; --ink:#EAE6DC; --muted:#9AA6A2;
+    --line:#2C3936; --board:#12211E; --board-2:#1E3A34;
+    --wood:#D69A5C; --marigold:#F0B54A; --sky:#5AA6CE; --coral:#E88068;
+    --edu:#6FB3A6; --bts:#D69A5C; --proof:#5AA6CE; --conv:#F0B54A;
+    --shadow:0 18px 44px -22px rgba(0,0,0,.7);
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);
+    line-height:1.55;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 22px}
+  .eyebrow{font-size:12px;letter-spacing:.16em;text-transform:uppercase;font-weight:700;color:var(--wood)}
+  h2{font-family:var(--serif);font-weight:700;font-size:clamp(24px,3.4vw,36px);
+    line-height:1.1;margin:.2em 0 .3em;text-wrap:balance}
+  h3{font-size:15px;letter-spacing:.02em;margin:0 0 4px}
+  p{margin:0 0 12px;max-width:62ch}
+  .lead{font-size:18px;color:var(--muted)}
+  section{padding:64px 0;border-top:1px solid var(--line)}
+  .toggle{position:fixed;top:16px;right:16px;z-index:20;border:1px solid var(--line);
+    background:var(--surface);color:var(--ink);border-radius:999px;padding:8px 14px;
+    font:600 13px var(--sans);cursor:pointer;box-shadow:var(--shadow)}
+  .toggle:focus-visible{outline:2px solid var(--marigold);outline-offset:2px}
+
+  /* HERO */
+  .hero{background:
+      radial-gradient(120% 90% at 85% -10%, var(--board-2), transparent 60%),
+      var(--board);
+    color:#F3EFE4;border-top:none;position:relative;overflow:hidden}
+  .hero:before{content:"";position:absolute;inset:0;opacity:.06;
+    background-image:linear-gradient(#fff 1px,transparent 1px),linear-gradient(90deg,#fff 1px,transparent 1px);
+    background-size:34px 34px;pointer-events:none}
+  .hero .wrap{position:relative;padding-top:88px;padding-bottom:76px}
+  .hero .eyebrow{color:var(--marigold)}
+  .hero h1{font-family:var(--serif);font-weight:700;font-size:clamp(30px,5.2vw,56px);
+    line-height:1.05;margin:.25em 0 .35em;max-width:16ch;text-wrap:balance}
+  .hero h1 em{font-style:italic;color:var(--marigold)}
+  .hero p{color:#D6E0DA;font-size:clamp(16px,2vw,20px);max-width:52ch}
+  .chiprow{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}
+  .chip{font-size:13px;font-weight:600;padding:6px 12px;border-radius:999px;
+    background:rgba(255,255,255,.09);border:1px solid rgba(255,255,255,.18);color:#EFE9DC}
+
+  /* PROFILE MOCKUP */
+  .split{display:grid;grid-template-columns:320px 1fr;gap:44px;align-items:start}
+  @media(max-width:860px){.split{grid-template-columns:1fr;gap:32px}}
+  .phone{background:var(--surface);border:1px solid var(--line);border-radius:30px;
+    box-shadow:var(--shadow);overflow:hidden;max-width:340px;margin:0 auto;width:100%}
+  .ph-top{display:flex;align-items:center;justify-content:space-between;padding:12px 16px;
+    border-bottom:1px solid var(--line);font-weight:700}
+  .ph-top small{font-weight:600;color:var(--muted)}
+  .ph-body{padding:16px}
+  .ph-head{display:flex;gap:18px;align-items:center}
+  .avatar{width:74px;height:74px;border-radius:50%;flex:0 0 auto;display:grid;place-items:center;
+    font-size:34px;background:radial-gradient(circle at 30% 25%,#fff3,transparent 60%),var(--marigold);
+    border:3px solid var(--surface);box-shadow:0 0 0 2px var(--marigold)}
+  .stats{display:flex;gap:16px;text-align:center;flex:1;justify-content:space-around}
+  .stats b{display:block;font-size:16px}
+  .stats span{font-size:11px;color:var(--muted)}
+  .ph-name{font-weight:700;margin-top:12px;font-size:14px}
+  .ph-bio{font-size:13px;color:var(--ink);margin-top:2px;line-height:1.5}
+  .ph-bio .k{color:var(--sky);font-weight:600}
+  .btns{display:flex;gap:6px;margin-top:12px}
+  .btns button{flex:1;border:none;border-radius:9px;padding:7px 0;font:600 12px var(--sans);cursor:default}
+  .b-follow{background:var(--sky);color:#fff}
+  .b-msg{background:var(--line);color:var(--ink)}
+  .b-wa{background:var(--edu);color:#fff}
+  .hl{display:flex;gap:14px;margin-top:16px;overflow:hidden}
+  .hl div{text-align:center;font-size:10px;color:var(--muted);width:52px}
+  .hl i{display:block;width:52px;height:52px;border-radius:50%;margin-bottom:4px;
+    display:grid;place-items:center;font-style:normal;font-size:20px;
+    border:1px solid var(--line);background:var(--paper)}
+  .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:3px;margin-top:14px}
+  .cell{aspect-ratio:1;border-radius:6px;display:flex;flex-direction:column;justify-content:space-between;
+    padding:7px;color:#fff;font-size:9px;font-weight:600;line-height:1.2;overflow:hidden}
+  .cell .em{font-size:22px;line-height:1;align-self:flex-end}
+  .cell .tt{text-shadow:0 1px 2px rgba(0,0,0,.35)}
+  .c-edu{background:var(--edu)} .c-bts{background:var(--bts)}
+  .c-proof{background:var(--proof)} .c-conv{background:var(--conv);color:#3a2a08}
+
+  .callouts{display:flex;flex-direction:column;gap:14px}
+  .callout{display:flex;gap:12px;align-items:flex-start}
+  .callout .n{flex:0 0 auto;width:26px;height:26px;border-radius:7px;background:var(--board);color:#fff;
+    display:grid;place-items:center;font-weight:700;font-size:13px}
+  .callout p{margin:0;font-size:14px}
+  .callout b{font-size:14px}
+  .mono{font-family:ui-monospace,"SFMono-Regular",Consolas,monospace;font-size:13px;
+    background:var(--paper);border:1px solid var(--line);border-radius:8px;padding:3px 7px;display:inline-block}
+
+  /* PILLARS */
+  .legend{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:8px}
+  @media(max-width:760px){.legend{grid-template-columns:repeat(2,1fr)}}
+  .pill{border:1px solid var(--line);border-radius:14px;padding:16px;background:var(--surface)}
+  .dot{width:12px;height:12px;border-radius:50%;display:inline-block;margin-right:7px;vertical-align:middle}
+  .pill h3{display:flex;align-items:center;font-size:14px}
+  .pill p{font-size:13px;color:var(--muted);margin:6px 0 0}
+  .pill .pct{font-family:var(--serif);font-size:26px;font-weight:700;margin-top:8px}
+
+  /* TEMPLATES */
+  .tpls{display:grid;grid-template-columns:1fr 1fr;gap:26px}
+  @media(max-width:760px){.tpls{grid-template-columns:1fr}}
+  .tpl-cap{font-size:13px;color:var(--muted);margin-top:10px}
+  .carousel{aspect-ratio:4/5;border-radius:16px;background:var(--board);color:#F3EFE4;
+    padding:26px;display:flex;flex-direction:column;justify-content:space-between;box-shadow:var(--shadow);position:relative;overflow:hidden}
+  .carousel:before{content:"";position:absolute;inset:0;opacity:.07;
+    background-image:linear-gradient(#fff 1px,transparent 1px),linear-gradient(90deg,#fff 1px,transparent 1px);
+    background-size:30px 30px}
+  .carousel .kick{position:relative;font-size:12px;letter-spacing:.15em;text-transform:uppercase;color:var(--marigold);font-weight:700}
+  .carousel .big{position:relative;font-family:var(--serif);font-size:clamp(22px,3vw,30px);line-height:1.12}
+  .carousel .big u{text-decoration-color:var(--marigold);text-underline-offset:4px}
+  .carousel .foot{position:relative;display:flex;align-items:center;gap:8px;font-size:13px;color:#CBD8D2}
+  .carousel .foot i{font-style:normal}
+  .reel{aspect-ratio:9/16;max-height:520px;border-radius:16px;color:#fff;padding:22px;
+    display:flex;flex-direction:column;justify-content:space-between;box-shadow:var(--shadow);
+    background:linear-gradient(200deg,var(--sky),#1c4a63 85%);position:relative;overflow:hidden}
+  .reel .tag{align-self:flex-start;background:rgba(0,0,0,.28);border-radius:999px;padding:5px 11px;font-size:12px;font-weight:600}
+  .reel .hook{font-family:var(--serif);font-size:clamp(20px,2.6vw,26px);line-height:1.15;text-shadow:0 2px 10px rgba(0,0,0,.35)}
+  .reel .hook b{background:var(--marigold);color:#3a2a08;padding:0 6px;border-radius:4px;box-decoration-break:clone;-webkit-box-decoration-break:clone}
+  .reel .cc{align-self:center;font-size:12px;background:rgba(0,0,0,.3);padding:5px 12px;border-radius:8px}
+  .reel .big-em{position:absolute;right:-10px;bottom:64px;font-size:120px;opacity:.28;filter:saturate(.6)}
+
+  /* IDENTITY */
+  .swatches{display:grid;grid-template-columns:repeat(5,1fr);gap:12px}
+  @media(max-width:640px){.swatches{grid-template-columns:repeat(2,1fr)}}
+  .sw{border:1px solid var(--line);border-radius:12px;overflow:hidden;background:var(--surface)}
+  .sw .chip{height:76px}
+  .sw .meta{padding:9px 11px}
+  .sw b{font-size:13px;display:block}
+  .sw span{font-size:11px;color:var(--muted);font-family:ui-monospace,Consolas,monospace}
+  .type-spec{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:26px}
+  @media(max-width:640px){.type-spec{grid-template-columns:1fr}}
+  .type-card{border:1px solid var(--line);border-radius:14px;padding:20px;background:var(--surface)}
+  .type-card .big{font-family:var(--serif);font-size:34px;line-height:1.05}
+  .type-card .lbl{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--wood);font-weight:700;margin-bottom:8px}
+  .type-card .body-sample{font-family:var(--sans);font-size:15px;color:var(--muted)}
+
+  /* BEFORE / AFTER */
+  .ba{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+  @media(max-width:640px){.ba{grid-template-columns:1fr}}
+  .ba .col{border:1px solid var(--line);border-radius:16px;padding:22px;background:var(--surface)}
+  .ba .col.after{border-color:var(--edu);box-shadow:var(--shadow)}
+  .ba h3{font-family:var(--serif);font-size:19px;margin-bottom:12px}
+  .ba ul{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:10px}
+  .ba li{font-size:14px;padding-left:24px;position:relative;color:var(--ink)}
+  .ba .before li:before{content:"—";position:absolute;left:0;color:var(--muted)}
+  .ba .after li:before{content:"✓";position:absolute;left:0;color:var(--edu);font-weight:700}
+  .ba .before{opacity:.85}
+
+  footer{padding:40px 0 70px;color:var(--muted);font-size:13px}
+  .note{font-size:12px;color:var(--muted);margin-top:26px;max-width:70ch}
+</style>
+
+<button class="toggle" id="tg" aria-label="Alternar tema">Tema</button>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="eyebrow">Conceito visual · Proposta para alinhamento</div>
+    <h1>Os brinquedos que as escolas confiam, agora <em>para todas as famílias</em>.</h1>
+    <p>Uma direção de marca para a Peter Brinquedos crescer no digital sem perder o que já a torna forte: curadoria, confiança e educação de verdade.</p>
+    <div class="chiprow">
+      <span class="chip">Especialista, não camelô</span>
+      <span class="chip">Curadora, não vitrine</span>
+      <span class="chip">Educativo em primeiro lugar</span>
+    </div>
+  </div>
+</header>
+
+<section>
+  <div class="wrap">
+    <div class="eyebrow">O novo perfil</div>
+    <h2>O perfil vira a primeira venda</h2>
+    <p class="lead">Hoje a decisão de seguir ou sair acontece em 5 segundos. Cada elemento passa a trabalhar por vocês: o nome já diz o que é e para quem, a bio vira convite, e o WhatsApp fica a um toque.</p>
+    <div class="split" style="margin-top:26px">
+      <div class="phone" role="img" aria-label="Simulação do perfil do Instagram da Peter Brinquedos redesenhado">
+        <div class="ph-top">peterbrinquedos <small>•••</small></div>
+        <div class="ph-body">
+          <div class="ph-head">
+            <div class="avatar">🧸</div>
+            <div class="stats">
+              <div><b>128</b><span>posts</span></div>
+              <div><b>9.480</b><span>seguidores</span></div>
+              <div><b>312</b><span>seguindo</span></div>
+            </div>
+          </div>
+          <div class="ph-name">Peter Brinquedos | Educativos que as escolas usam</div>
+          <div class="ph-bio">
+            Brinquedos que ensinam brincando, escolhidos por quem as escolas confiam.<br>
+            <span class="k">Curadoria por idade</span> · Newart e marcas educativas<br>
+            Peça pelo WhatsApp ↓
+          </div>
+          <div class="btns">
+            <button class="b-follow">Seguir</button>
+            <button class="b-msg">Mensagem</button>
+            <button class="b-wa">WhatsApp</button>
+          </div>
+          <div class="hl">
+            <div><i>🎯</i>Por idade</div>
+            <div><i>🏫</i>Escolas</div>
+            <div><i>✨</i>Novidades</div>
+            <div><i>🎨</i>Newart</div>
+            <div><i>🛒</i>Comprar</div>
+          </div>
+          <div class="grid3">
+            <div class="cell c-edu"><span class="tt">Brinquedo por idade</span><span class="em">🧩</span></div>
+            <div class="cell c-proof"><span class="tt">As escolas usam</span><span class="em">🏫</span></div>
+            <div class="cell c-conv"><span class="tt">Presente que ensina</span><span class="em">🎁</span></div>
+            <div class="cell c-bts"><span class="tt">Acabou de chegar</span><span class="em">📦</span></div>
+            <div class="cell c-edu"><span class="tt">Guia 0–6 anos</span><span class="em">🔤</span></div>
+            <div class="cell c-proof"><span class="tt">Criança usando</span><span class="em">🧒</span></div>
+            <div class="cell c-conv"><span class="tt">Favoritos da loja</span><span class="em">⭐</span></div>
+            <div class="cell c-bts"><span class="tt">Bastidor Newart</span><span class="em">🎨</span></div>
+            <div class="cell c-edu"><span class="tt">Erro ao presentear</span><span class="em">🧠</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="callouts">
+        <div class="callout"><span class="n">1</span><div><b>Nome com palavra-chave</b><p>“Educativos que as escolas usam” aparece na busca do Google e do Instagram, e já entrega o diferencial no próprio nome.</p></div></div>
+        <div class="callout"><span class="n">2</span><div><b>Bio como convite</b><p>Quem ajuda, com o quê, e o próximo passo, em três linhas. Sem enrolação, com o WhatsApp como destino.</p></div></div>
+        <div class="callout"><span class="n">3</span><div><b>Destaques como um mapa</b><p><span class="mono">Por idade</span> <span class="mono">Escolas</span> <span class="mono">Novidades</span> <span class="mono">Newart</span> <span class="mono">Comprar</span> guiam o visitante direto para o que ele procura.</p></div></div>
+        <div class="callout"><span class="n">4</span><div><b>Feed com propósito</b><p>Cada cor é um tipo de conteúdo. Nada aleatório: o feed vira uma prateleira organizada por idade e por confiança.</p></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="eyebrow">O sistema de conteúdo</div>
+    <h2>Quatro pilares, um só assunto: educar brincando</h2>
+    <p class="lead">O algoritmo em 2026 premia consistência de nicho. Mantemos 80% em educativo e distribuímos o conteúdo em quatro funções, cada uma com um trabalho claro.</p>
+    <div class="legend">
+      <div class="pill"><h3><span class="dot" style="background:var(--edu)"></span>Educacional</h3><p>Curadoria por idade, o que cada brinquedo desenvolve. Constrói autoridade e gera salvamentos.</p><div class="pct" style="color:var(--edu)">35%</div></div>
+      <div class="pill"><h3><span class="dot" style="background:var(--bts)"></span>Bastidores</h3><p>Novidades, a loja, a equipe. “Acabou de chegar” é conteúdo pronto toda semana.</p><div class="pct" style="color:var(--bts)">25%</div></div>
+      <div class="pill"><h3><span class="dot" style="background:var(--proof)"></span>Prova social</h3><p>As escolas usam, a criança usando. O trunfo que a concorrência não tem.</p><div class="pct" style="color:var(--proof)">20%</div></div>
+      <div class="pill"><h3><span class="dot" style="background:var(--conv)"></span>Conversão</h3><p>Presente que ensina, ofertas. O menor pilar, porque os outros três é que o fazem vender.</p><div class="pct" style="color:var(--conv)">20%</div></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="eyebrow">Os templates</div>
+    <h2>Modelos que qualquer post herda</h2>
+    <p class="lead">Um sistema visual pronto: o carrossel de autoridade e a capa de Reels. Consistência de marca sem retrabalho a cada peça.</p>
+    <div class="tpls" style="margin-top:24px">
+      <div>
+        <div class="carousel">
+          <div class="kick">Guia de curadoria</div>
+          <div class="big">O brinquedo certo <u>para cada idade</u>, de 0 a 6 anos.</div>
+          <div class="foot"><i>🧩</i> Deslize · e salve para a próxima compra</div>
+        </div>
+        <p class="tpl-cap">Carrossel 4:5 · pilar Educacional · meta de salvamento</p>
+      </div>
+      <div>
+        <div class="reel">
+          <span class="tag">▶ Reels · 15s</span>
+          <div class="big-em" aria-hidden="true">🏫</div>
+          <div class="hook">O brinquedo que <b>toda escola tem</b> e quase nenhum pai conhece.</div>
+          <div class="cc">Salva pra quando for comprar</div>
+        </div>
+        <p class="tpl-cap">Capa de Reels 9:16 · pilar Educacional · gancho nos 3 primeiros segundos</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="eyebrow">A identidade</div>
+    <h2>Uma paleta de sala de aula e brinquedo de madeira</h2>
+    <p class="lead">Verde-lousa para a confiança das escolas, madeira e marigold para o calor do brinquedo, azul para clareza. Longe do apelativo, perto do educativo.</p>
+    <div class="swatches" style="margin-top:24px">
+      <div class="sw"><div class="chip" style="background:#1E3A34"></div><div class="meta"><b>Verde-lousa</b><span>#1E3A34</span></div></div>
+      <div class="sw"><div class="chip" style="background:#C98A4B"></div><div class="meta"><b>Madeira</b><span>#C98A4B</span></div></div>
+      <div class="sw"><div class="chip" style="background:#E9A62E"></div><div class="meta"><b>Marigold</b><span>#E9A62E</span></div></div>
+      <div class="sw"><div class="chip" style="background:#2F7DA8"></div><div class="meta"><b>Azul-giz</b><span>#2F7DA8</span></div></div>
+      <div class="sw"><div class="chip" style="background:#FBF8F2;border-top:1px solid var(--line)"></div><div class="meta"><b>Papel</b><span>#FBF8F2</span></div></div>
+    </div>
+    <div class="type-spec">
+      <div class="type-card">
+        <div class="lbl">Títulos · voz de curador</div>
+        <div class="big">Educar brincando</div>
+        <p style="margin:.5em 0 0;color:var(--muted);font-size:13px">Serifada, editorial, transmite confiança e cuidado, o oposto de infantilizado.</p>
+      </div>
+      <div class="type-card">
+        <div class="lbl">Corpo · clareza</div>
+        <div class="body-sample">Cada brinquedo tem uma idade e uma habilidade que desenvolve. A gente explica qual, para você acertar o presente e a criança querer de novo.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="eyebrow">O que muda</div>
+    <h2>De perfil parado a máquina de curadoria</h2>
+    <div class="ba" style="margin-top:22px">
+      <div class="col before">
+        <h3>Hoje</h3>
+        <ul>
+          <li>Instagram desatualizado, sem posicionamento claro</li>
+          <li>Venda só por WhatsApp, sem vitrine que trabalha sozinha</li>
+          <li>Conteúdo sem sistema, sem constância</li>
+          <li>A confiança das escolas não aparece para as famílias</li>
+        </ul>
+      </div>
+      <div class="col after">
+        <h3>Com a nova direção</h3>
+        <ul>
+          <li>Marca de curadoria educativa, reconhecível em 5 segundos</li>
+          <li>Catálogo do WhatsApp organizado por idade, ligado à bio</li>
+          <li>Grade de 30 dias com 4 pilares e ganchos prontos</li>
+          <li>“As escolas confiam” vira o argumento central de venda</li>
+        </ul>
+      </div>
+    </div>
+    <p class="note">Conceito de direção visual para apresentação. Cores, ícones e números do perfil são ilustrativos; a versão final usa a identidade e os produtos reais da Peter Brinquedos após o alinhamento.</p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">Peter Brinquedos × Vistrum · conceito preparado por João · agosto de 2026</div>
+</footer>
+
+<script>
+  (function(){
+    var b=document.getElementById('tg');
+    function cur(){var s=document.documentElement.getAttribute('data-theme');
+      if(s)return s;return window.matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light';}
+    b.addEventListener('click',function(){
+      var next=cur()==='dark'?'light':'dark';
+      document.documentElement.setAttribute('data-theme',next);
+    });
+  })();
+</script>
