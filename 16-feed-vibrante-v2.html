@@ -1,0 +1,195 @@
+<title>Peter Brinquedos · Feed Vibrante v2</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+  :root{
+    --yellow:#FFC12E; --yellow-d:#F5A81E; --orange:#FF7A2E; --orange-d:#F0641A;
+    --blue:#1FA5E0; --blue-d:#0E7CC0; --green:#54B948; --magenta:#E7508A;
+    --cream:#FFFDF6; --ink:#153A54; --page:#0E1A22;
+    --sans:"Segoe UI",system-ui,-apple-system,"Trebuchet MS",Verdana,sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:var(--sans);background:var(--page);color:#EAF2F5;padding:26px 16px 60px;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:1040px;margin:0 auto}
+  .top{text-align:center;margin-bottom:22px}
+  .top .ey{font-size:12px;letter-spacing:.2em;text-transform:uppercase;font-weight:800;color:var(--yellow)}
+  .top h1{font-size:clamp(22px,4vw,34px);font-weight:900;margin:6px 0 4px}
+  .top p{color:#9FB4BE;max-width:60ch;margin:0 auto;font-size:14.5px;line-height:1.5}
+
+  .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+  @media(max-width:720px){.grid{grid-template-columns:repeat(2,1fr)}}
+  @media(max-width:460px){.grid{grid-template-columns:1fr}}
+
+  .cell{position:relative;aspect-ratio:4/5;border-radius:14px;overflow:hidden;
+    display:flex;flex-direction:column;justify-content:flex-start;padding:20px 18px;isolation:isolate}
+  .cell *{position:relative;z-index:2}
+  .cell .bgblob{position:absolute;z-index:1;border-radius:50%;filter:blur(2px);opacity:.9}
+  .cell .spark{position:absolute;z-index:1;fill:#fff;opacity:.9}
+  .cell .wave{position:absolute;left:0;right:0;bottom:0;z-index:1}
+
+  /* headline sticker type */
+  .hl{font-weight:900;line-height:.98;color:#fff;letter-spacing:.5px;
+    text-shadow:0 2px 0 rgba(0,0,0,.14), 0 8px 16px rgba(0,0,0,.18);
+    font-size:clamp(22px,3.4vw,34px)}
+  .hl .big{display:block;font-size:1.28em}
+  .hl .mari{color:var(--yellow)}
+  .kick{font-weight:800;font-size:13px;letter-spacing:.06em;color:#fff;opacity:.95;text-transform:uppercase}
+  .sub{font-weight:800;color:#fff;font-size:13px;margin-top:auto;opacity:.95}
+
+  /* photo slot */
+  .photo{position:absolute;z-index:1;inset:auto 0 0 0;height:58%;
+    background:radial-gradient(60% 70% at 50% 90%, rgba(255,255,255,.28), transparent 70%);
+    display:flex;align-items:flex-end;justify-content:center}
+  .photo .kid{font-size:76px;filter:drop-shadow(0 10px 14px rgba(0,0,0,.25));opacity:.92;margin-bottom:6px}
+  .photo .tagphoto{position:absolute;bottom:8px;left:50%;transform:translateX(-50%);
+    background:rgba(0,0,0,.32);color:#fff;font-size:9.5px;font-weight:700;letter-spacing:.03em;
+    padding:3px 9px;border-radius:99px;white-space:nowrap}
+
+  /* logo + badge */
+  .logo{position:absolute;z-index:3;left:50%;bottom:12px;transform:translateX(-50%);
+    background:#fff;border-radius:12px;padding:5px 12px;display:flex;flex-direction:column;align-items:center;line-height:1;
+    box-shadow:0 6px 14px rgba(0,0,0,.18)}
+  .logo b{color:var(--blue);font-size:15px;font-weight:900;letter-spacing:.3px}
+  .logo span{color:var(--orange);font-size:8px;font-weight:800;letter-spacing:.06em}
+  .badge{position:absolute;z-index:3;top:14px;left:14px;width:40px;height:40px;border-radius:50%;
+    background:var(--blue);display:grid;place-items:center;font-size:18px;box-shadow:0 4px 10px rgba(0,0,0,.2)}
+
+  /* color themes */
+  .t-orange{background:linear-gradient(160deg,var(--yellow),var(--orange))}
+  .t-orange2{background:linear-gradient(160deg,var(--orange),var(--orange-d))}
+  .t-blue{background:linear-gradient(160deg,var(--blue),var(--blue-d))}
+  .t-yellow{background:linear-gradient(160deg,#FFD35A,var(--yellow-d))}
+  .t-sky{background:linear-gradient(180deg,#4FC0F0,#1E86C8)}
+
+  .system{margin-top:30px;background:#13232D;border:1px solid #22333d;border-radius:16px;padding:22px}
+  .system h2{font-size:18px;font-weight:900;margin-bottom:4px}
+  .system p{color:#9FB4BE;font-size:14px;line-height:1.55;margin:6px 0}
+  .sw{display:flex;gap:8px;flex-wrap:wrap;margin:12px 0}
+  .sw span{width:64px;height:44px;border-radius:9px;display:flex;align-items:flex-end;justify-content:center;font-size:8px;font-weight:800;color:#fff;padding-bottom:3px;text-shadow:0 1px 2px #0007}
+  .cols{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:8px}
+  @media(max-width:600px){.cols{grid-template-columns:1fr}}
+  .card{background:#0F1D25;border:1px solid #22333d;border-radius:12px;padding:14px}
+  .card h3{font-size:13px;color:var(--yellow);text-transform:uppercase;letter-spacing:.08em;margin-bottom:6px}
+  .card ul{margin:0;padding-left:16px}.card li{font-size:13px;color:#C6D5DC;margin:4px 0}
+</style>
+
+<div class="wrap">
+  <div class="top">
+    <div class="ey">Direção visual v2 · Feed estático</div>
+    <h1>Um feed vivo, colorido e convidativo</h1>
+    <p>Mesma energia da referência que você mandou, adaptada para a Peter: cor, alegria e criança de verdade — com a curadoria educativa no texto. As áreas de foto recebem as imagens de criança + brinquedo geradas por IA.</p>
+  </div>
+
+  <div class="grid">
+
+    <!-- 1 -->
+    <div class="cell t-orange">
+      <span class="bgblob" style="width:180px;height:180px;background:#FFE08A;top:-50px;right:-40px"></span>
+      <div class="kick">Peter Brinquedos</div>
+      <div class="hl">A porta da<span class="big">diversão que ensina</span></div>
+      <div class="photo"><div class="kid">🧒</div><div class="tagphoto">foto IA · criança + brinquedo</div></div>
+      <div class="badge">🧸</div>
+      <div class="logo"><b>Peter</b><span>BRINCOU, APRENDEU!</span></div>
+    </div>
+
+    <!-- 2 -->
+    <div class="cell t-sky">
+      <span class="bgblob" style="width:120px;height:120px;background:#fff;opacity:.5;top:-30px;left:-20px"></span>
+      <span class="bgblob" style="width:90px;height:90px;background:#fff;opacity:.45;top:20px;right:20px"></span>
+      <div class="hl" style="background:#fff;color:var(--orange);display:inline-block;padding:10px 14px;border-radius:18px 18px 18px 4px;text-shadow:none;align-self:flex-start;font-size:clamp(20px,3vw,30px)">Em cada idade,<br>o brinquedo certo</div>
+      <div class="photo"><div class="kid">🧒</div><div class="tagphoto">foto IA · criança + brinquedo</div></div>
+      <div class="logo"><b>Peter</b><span>BRINCOU, APRENDEU!</span></div>
+    </div>
+
+    <!-- 3 -->
+    <div class="cell t-yellow">
+      <svg class="spark" width="46" height="46" style="top:40px;left:24px" viewBox="0 0 24 24"><path d="M12 0l2.5 9.5L24 12l-9.5 2.5L12 24l-2.5-9.5L0 12l9.5-2.5z"/></svg>
+      <svg class="spark" width="26" height="26" style="top:150px;right:30px;opacity:.7" viewBox="0 0 24 24"><path d="M12 0l2.5 9.5L24 12l-9.5 2.5L12 24l-2.5-9.5L0 12l9.5-2.5z"/></svg>
+      <div class="photo" style="height:52%"><div class="kid">👦</div></div>
+      <div class="hl" style="margin-top:auto;color:var(--ink);text-shadow:0 2px 0 #fff6">Brinquedo<span class="big" style="color:#fff">escolhido a dedo</span></div>
+      <div class="logo"><b>Peter</b><span>BRINCOU, APRENDEU!</span></div>
+    </div>
+
+    <!-- 4 -->
+    <div class="cell t-blue">
+      <span class="bgblob" style="width:160px;height:160px;background:#5FC4EE;top:-40px;left:-30px"></span>
+      <div class="hl">Hoje é dia de<span class="big mari">aprender</span><span class="big">brincando</span></div>
+      <div class="photo"><div class="kid">🧒</div><div class="tagphoto">foto IA · criança + presente</div></div>
+      <div class="badge">🧸</div>
+      <div class="logo"><b>Peter</b><span>BRINCOU, APRENDEU!</span></div>
+    </div>
+
+    <!-- 5 (hero, slogan) -->
+    <div class="cell t-orange2">
+      <span class="bgblob" style="width:200px;height:200px;background:#FFC12E;bottom:-60px;left:-40px;opacity:.5"></span>
+      <div class="hl" style="text-align:center;margin:6px auto 0">Brincou,<span class="big" style="color:#153A54;text-shadow:0 2px 0 #fff8">aprendeu.</span></div>
+      <div class="sub" style="text-align:center;margin:8px auto 0;align-self:center">O jeito certo de crescer brincando</div>
+      <div class="photo"><div class="kid">🙌</div></div>
+      <div class="logo"><b>Peter</b><span>BRINCOU, APRENDEU!</span></div>
+    </div>
+
+    <!-- 6 -->
+    <div class="cell t-sky">
+      <div class="hl">O parque do<span class="big mari">aprender</span>brincando</div>
+      <div class="photo"><div class="kid">⚽</div><div class="tagphoto">foto IA · criança + brinquedo</div></div>
+      <div class="logo"><b>Peter</b><span>BRINCOU, APRENDEU!</span></div>
+    </div>
+
+    <!-- 7 (quote) -->
+    <div class="cell t-yellow">
+      <div class="hl" style="color:var(--ink);text-shadow:0 2px 0 #fff6">Presente que<span class="big">ensina</span></div>
+      <div style="margin-top:12px;background:var(--magenta);color:#fff;font-weight:800;font-size:13px;padding:10px 14px;border-radius:16px;align-self:flex-start;max-width:80%">"O melhor presente é o que a criança usa e ainda aprende."</div>
+      <div class="photo" style="height:42%"><div class="kid">🎁</div></div>
+      <div class="logo"><b>Peter</b><span>BRINCOU, APRENDEU!</span></div>
+    </div>
+
+    <!-- 8 -->
+    <div class="cell t-blue">
+      <span class="bgblob" style="width:120px;height:120px;background:#fff;opacity:.25;top:20px;right:-20px"></span>
+      <div class="photo" style="height:56%"><div class="kid">🧒</div></div>
+      <div class="hl" style="margin-top:auto">O mundo<span class="big mari">educativo</span>do seu filho</div>
+      <div class="logo"><b>Peter</b><span>BRINCOU, APRENDEU!</span></div>
+    </div>
+
+    <!-- 9 -->
+    <div class="cell t-orange">
+      <span class="bgblob" style="width:150px;height:150px;background:#FFE08A;bottom:-40px;right:-30px"></span>
+      <div class="hl">Mãozinhas pequenas,<span class="big">grande aprendizado</span></div>
+      <div class="photo"><div class="kid">🧱</div><div class="tagphoto">foto IA · criança + blocos</div></div>
+      <div class="logo"><b>Peter</b><span>BRINCOU, APRENDEU!</span></div>
+    </div>
+
+  </div>
+
+  <div class="system">
+    <h2>O sistema (o que mantém bonito e não vira poluído)</h2>
+    <p>A diferença entre "vibrante" e "camelô" é consistência. Poucas cores por post, tipografia gorda e arredondada sempre igual, a logo no mesmo lugar, e a foto como estrela.</p>
+    <div class="sw">
+      <span style="background:#FFC12E">amarelo</span>
+      <span style="background:#FF7A2E">laranja</span>
+      <span style="background:#1FA5E0">azul</span>
+      <span style="background:#54B948">verde</span>
+      <span style="background:#E7508A">magenta</span>
+      <span style="background:#153A54">tinta</span>
+    </div>
+    <div class="cols">
+      <div class="card">
+        <h3>Tipografia</h3>
+        <ul>
+          <li>Display gorda e arredondada: <b>Fredoka</b> ou <b>Baloo 2</b> (a cara da referência).</li>
+          <li>Branca com contorno suave e sombra, como adesivo.</li>
+          <li>Apoio e legendas: Inter / Nunito.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Receita da foto IA</h3>
+        <ul>
+          <li>Criança real e alegre, recortada, sorrindo ou em movimento.</li>
+          <li>Fundo de cor sólida da paleta, luz clara e viva.</li>
+          <li>Com o brinquedo real da Peter na mão (referência do produto).</li>
+          <li>Mesma direção de luz e enquadramento em todas, pra dar unidade.</li>
+        </ul>
+      </div>
+    </div>
+    <p style="margin-top:12px;font-size:12px;color:#7C9099">Os emojis e as caixas de foto aqui são só marcadores de posição. Na versão final entram as imagens geradas de crianças com os brinquedos da Peter.</p>
+  </div>
+</div>
