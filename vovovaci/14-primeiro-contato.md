@@ -2,50 +2,53 @@
 
 Roteiro para puxar a cliente a uma reunião de apresentação. Objetivo único da mensagem: **marcar 30 a 40 minutos.** Não é vender na mensagem, é despertar curiosidade e agendar.
 
+Contexto da indicação: **Mariane, da Souza & Oliveira** (consultoria empresarial da Vovó Vaci), indicou o trabalho. Ela identificou que o marketing atual não posta com regularidade nem tem compromisso. Este é o ativo mais forte da abordagem: confiança emprestada de quem já assessora a cliente.
+
 Princípios (do briefing e do playbook):
-- 1 - Abrir pelo trunfo dela (a Vovó, a tradição), não pela dor.
-- 2 - Plantar o insight de leve (o perfil tem alma, mas a Vovó aparece pouco e o feed parece de várias marcas).
-- 3 - Dizer que você **já montou** um conceito. Prova de trabalho antes de cobrar.
-- 4 - Fechar com um pedido de horário concreto (duas opções de dia), fácil de responder "sim".
-- 5 - Tom caseiro e próximo, a mesma voz da marca. Sem "prezados", sem juridiquês.
+- 1 - Abrir com o nome da Mari. Confiança emprestada instantânea, você deixa de ser estranho.
+- 2 - Elogiar o trunfo (a Vovó, a tradição). Ninguém agenda com quem começou apontando defeito.
+- 3 - Posicionar pela **regularidade e constância**, não pela criatividade. Padaria é simples, o que falta é consistência, e disso você cuida.
+- 4 - **Nunca criticar a equipe atual** na mensagem. A Mari já sinalizou isso internamente. Você entra pela solução, não pela crítica.
+- 5 - Dizer que você **já montou** um conceito. Prova de trabalho antes de cobrar.
+- 6 - Fechar com dois horários concretos, fácil de responder "sim".
 
 ---
 
-## Mensagem principal (WhatsApp ou direct) - versão recomendada
+## Mensagem principal (WhatsApp) - versão recomendada
 
-> Oi, Vaci! Tudo bem? 🧡
+> Oi, Vaci! Tudo bem? Aqui é o {seu nome}. 🧡
 >
-> Acompanhei o perfil da Vovó Vaci e fiquei encantado com uma coisa: vocês têm algo que padaria nenhuma da cidade tem, que é a própria Vovó, 87 anos e uma história de verdade. Isso é raro e é ouro.
+> A Mariane, da Souza & Oliveira, me passou o contato de vocês, ela é uma parceira e conhece bem a casa. Fui dar uma olhada no perfil da Vovó Vaci e me encantei: vocês têm algo que padaria nenhuma da cidade tem, que é a própria Vovó, 87 anos e uma história de verdade.
 >
-> Trabalho com marca e conteúdo, e olhando com calma vi que dá pra fazer o Instagram de vocês crescer bastante sem perder essa alma, colocando a Vovó e o gosto de casa no centro.
+> Eu trabalho com marca e conteúdo, e o meu foco é justamente o que padaria precisa: constância. Nada de reinventar a roda, é caprichar no que vocês já têm de bom e postar com regularidade pra a cidade toda ver.
 >
-> Fiz um conceito visual do que a Vovó Vaci poderia ser no digital, já com a cara de vocês. Gostaria de te mostrar pessoalmente (ou por chamada), leva uns 30 minutinhos.
+> Pra te mostrar na prática, já montei um conceito visual do Instagram de vocês, com a cara da Vovó Vaci. Queria te apresentar numa conversa rápida, uns 30 minutinhos, presencial ou por chamada.
 >
-> Você tem uma brechinha essa semana, quinta ou sexta? Prometo que vale a pena. 😊
-
----
-
-## Variação A - se já existe algum contato/indicação
-
-> Oi, Vaci! Aqui é o {seu nome}. 🧡
->
-> {Fulano} comentou de vocês e eu fui dar uma olhada no perfil da Vovó Vaci, adorei. A história da Vovó, o café colonial, o pão quentinho... tem uma alma que a maioria das padarias não tem.
->
-> Eu trabalho com marca e conteúdo e montei um conceito de como a Vovó Vaci poderia brilhar no Instagram sem perder essa essência. Queria te apresentar, são uns 30 minutos.
->
-> Melhor pra você quinta de manhã ou sexta à tarde?
+> Você tem uma brechinha essa semana, quinta ou sexta? 😊
 
 ---
 
-## Variação B - primeiro contato frio (nenhum vínculo)
+## Variação A - mais curta e direta (se preferir)
 
-> Oi! Tudo bem? Falo com a responsável pela Vovó Vaci? 🧡
+> Oi, Vaci! Aqui é o {seu nome}, indicado da Mariane, da Souza & Oliveira. 🧡
 >
-> Me chamo {seu nome}, trabalho com marca e conteúdo aqui na região. Comecei a acompanhar o perfil de vocês e me apaixonei pela história da Vovó, 87 anos é uma baita marca.
+> Ela comentou que vocês têm um perfil com muito potencial e que dava pra dar uma cuidada mais de perto. Fui ver e me apaixonei pela história da Vovó.
 >
-> Sem querer tomar seu tempo: eu montei, por conta, um conceito de como o Instagram da Vovó Vaci poderia crescer bastante mantendo esse jeito caseiro. Adoraria te mostrar numa conversa rápida, uns 30 minutos, presencial ou por chamada.
+> Eu cuido de marca e conteúdo, com foco em regularidade (padaria não precisa de mágica, precisa de constância). Já montei um conceito do Instagram de vocês pra te mostrar.
 >
-> Você teria uma brecha essa semana? Consigo me adaptar ao melhor horário pra vocês.
+> São uns 30 minutos. Quinta de manhã ou sexta à tarde te atende melhor?
+
+---
+
+## Variação B - tocando de leve na dor (use só se sentir abertura)
+
+> Oi, Vaci! Aqui é o {seu nome}, a Mariane da Souza & Oliveira me indicou. 🧡
+>
+> Ela comentou que a Vovó Vaci tem um perfil cheio de potencial, mas que a régua de postagem anda meio irregular, e é aí que eu entro. Meu trabalho é dar constância e uma identidade só pro Instagram, sem perder o jeito caseiro de vocês.
+>
+> Já montei um conceito visual com a cara da Vovó Vaci pra te mostrar. Me dá 30 minutinhos essa semana? Quinta ou sexta?
+
+Cuidado: mesmo aqui, a "régua irregular" vem embalada em elogio ("cheio de potencial") e sem nunca citar a equipe atual. Foque no futuro, não no que está errado.
 
 ---
 
