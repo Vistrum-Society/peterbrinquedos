@@ -1,0 +1,124 @@
+<title>Peter Brinquedos · Deploy no Vercel</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+  :root{
+    --yellow:#FFC12E;--orange:#FF7A2E;--blue:#1FA5E0;--green:#54B948;--red:#E7373C;
+    --ink:#12386E;--paper:#FBFAF7;--card:#fff;--line:#ECE6DA;--muted:#647380;
+    --sans:"Segoe UI",system-ui,-apple-system,"Trebuchet MS",Arial,sans-serif;
+    --mono:"SFMono-Regular",Consolas,"Liberation Mono",Menlo,monospace;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:var(--sans);background:var(--paper);color:var(--ink);line-height:1.55}
+  .wrap{max-width:840px;margin:0 auto;padding:0 24px}
+  .hero{background:linear-gradient(160deg,var(--ink),#0C2A54);color:#fff;padding:42px 0 34px}
+  .kick{font-size:12px;font-weight:800;letter-spacing:.2em;text-transform:uppercase;opacity:.9}
+  .hero h1{font-size:clamp(24px,4vw,34px);font-weight:900;margin:10px 0 6px}
+  .hero p{max-width:60ch;color:#D7E4F2;font-size:15px}
+  section{padding:30px 0;border-top:1px solid var(--line)}
+  .eyebrow{font-size:12px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--orange)}
+  h2{font-size:clamp(19px,3vw,24px);font-weight:900;margin:6px 0 4px}
+  .lead{color:var(--muted);max-width:66ch;font-size:15px;margin-top:4px}
+  .step{display:flex;gap:16px;align-items:flex-start;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px 20px;margin-top:14px}
+  .step .n{flex:0 0 auto;width:34px;height:34px;border-radius:10px;background:var(--blue);color:#fff;font-weight:900;display:grid;place-items:center;font-size:15px}
+  .step h3{font-size:16px;font-weight:900;margin-bottom:4px}
+  .step p{font-size:14px;margin:6px 0}
+  .step ul,.step ol{margin:6px 0 0 18px}.step li{font-size:14px;margin:5px 0}
+  code{font-family:var(--mono);background:#F2EEE3;border:1px solid var(--line);border-radius:6px;padding:1px 6px;font-size:13px}
+  .dns{width:100%;border-collapse:collapse;margin-top:10px;font-size:13.5px;background:#fff;border:1px solid var(--line);border-radius:10px;overflow:hidden}
+  .dns th{background:#F3EEE2;text-align:left;padding:8px 10px;font-size:11px;letter-spacing:.06em;text-transform:uppercase}
+  .dns td{padding:8px 10px;border-top:1px solid var(--line);font-family:var(--mono);font-size:12.5px}
+  .warn{background:#FFF7EC;border:1px solid #F3D9A8;border-radius:12px;padding:14px 16px;margin-top:14px;font-size:13.5px}
+  .warn b{color:#9A5B00}
+  .ok{background:#EAF7EC;border:1px solid #BFE6C6;border-radius:12px;padding:14px 16px;margin-top:14px;font-size:13.5px}
+  footer{padding:30px 0 60px;color:var(--muted);font-size:12.5px;text-align:center;border-top:1px solid var(--line)}
+</style>
+
+<div class="hero"><div class="wrap">
+  <div class="kick">Guia técnico · Vistrum</div>
+  <h1>Publicar a página no domínio da Peter (Vercel)</h1>
+  <p>O Vercel hospeda a página de graça; o registro.br só aponta o domínio para ele. São 6 passos. Faça na ordem.</p>
+</div></div>
+
+<section><div class="wrap">
+  <div class="eyebrow">Antes de começar</div>
+  <h2>Como funciona</h2>
+  <p class="lead">A página (o arquivo <code>index.html</code>) já está no repositório, na pasta <code>site/</code>. Falta subir as 2 imagens que ela usa, conectar o Vercel e apontar o domínio. Você precisa estar logado no GitHub (conta da Vistrum), no Vercel e no registro.br.</p>
+</div></section>
+
+<section><div class="wrap">
+  <div class="eyebrow">Passo a passo</div>
+  <h2>Publicando</h2>
+
+  <div class="step"><div class="n">1</div><div>
+    <h3>Subir as 2 imagens pro GitHub</h3>
+    <p>A página usa <code>logo-peter.png</code> e <code>fundo.png</code>. Elas precisam ficar dentro da pasta <code>site/</code>.</p>
+    <ol>
+      <li>Abra o repositório no GitHub e entre na pasta <code>site/</code>.</li>
+      <li>Clique em <b>Add file → Upload files</b>.</li>
+      <li>Arraste <code>logo-peter.png</code> e <code>fundo.png</code> (as mesmas da sua pasta Peter).</li>
+      <li>Clique em <b>Commit changes</b>. Confira: a pasta <code>site/</code> deve ter <code>index.html</code>, <code>logo-peter.png</code> e <code>fundo.png</code>.</li>
+    </ol>
+  </div></div>
+
+  <div class="step"><div class="n">2</div><div>
+    <h3>Conectar o Vercel ao repositório</h3>
+    <ol>
+      <li>Entre em <code>vercel.com</code> e faça login (pode ser com a conta do GitHub).</li>
+      <li><b>Add New… → Project</b>.</li>
+      <li>Em <b>Import Git Repository</b>, escolha <code>Vistrum-Society/peterbrinquedos</code>. Se não aparecer, clique em <b>Adjust GitHub App Permissions</b> e libere o acesso a esse repositório.</li>
+    </ol>
+  </div></div>
+
+  <div class="step"><div class="n">3</div><div>
+    <h3>Configurar e publicar</h3>
+    <ul>
+      <li><b>Root Directory:</b> clique em <b>Edit</b> e selecione a pasta <code>site</code>. <span style="color:var(--red)">(Passo mais importante.)</span></li>
+      <li><b>Framework Preset:</b> <code>Other</code>.</li>
+      <li>Branch: se pedir, use <code>claude/peter-brinquedos-briefing-m192it</code> por enquanto.</li>
+      <li>Clique em <b>Deploy</b> e aguarde. No fim, o Vercel te dá um endereço <code>algo.vercel.app</code>.</li>
+    </ul>
+    <div class="ok">✅ Abra o <code>.vercel.app</code> e confira: logo, fundo e botões devem aparecer certinho. Se a imagem não carregar, revise o Passo 1 (nome/pasta das imagens).</div>
+  </div></div>
+
+  <div class="step"><div class="n">4</div><div>
+    <h3>Adicionar o domínio da Peter no Vercel</h3>
+    <ol>
+      <li>No projeto: <b>Settings → Domains</b>.</li>
+      <li>Digite o domínio da Peter (ex.: <code>peterbrinquedos.com.br</code>) e clique em <b>Add</b>.</li>
+      <li>O Vercel vai mostrar os <b>registros DNS</b> que você precisa criar. Anote exatamente o que ele mostrar (os valores abaixo são o padrão).</li>
+    </ol>
+  </div></div>
+
+  <div class="step"><div class="n">5</div><div>
+    <h3>Apontar o DNS no registro.br</h3>
+    <p>No <code>registro.br</code>, entre no domínio e vá em <b>Editar Zona DNS</b> (DNS do registro.br). Crie os registros que o Vercel pediu. Normalmente:</p>
+    <table class="dns">
+      <tr><th>Tipo</th><th>Nome / Host</th><th>Valor</th></tr>
+      <tr><td>A</td><td>@ (domínio raiz)</td><td>76.76.21.21</td></tr>
+      <tr><td>CNAME</td><td>www</td><td>cname.vercel-dns.com</td></tr>
+    </table>
+    <div class="warn"><b>Use o que o Vercel mostrar na SUA tela</b> (o IP do registro A pode variar). Se o registro.br não aceitar CNAME no raiz, use o registro A no raiz e o CNAME só no <code>www</code>, como na tabela.</div>
+  </div></div>
+
+  <div class="step"><div class="n">6</div><div>
+    <h3>Aguardar e finalizar</h3>
+    <ul>
+      <li>A propagação do DNS leva de alguns minutos a algumas horas. No Vercel, o domínio fica <b>Valid</b> quando reconhecer.</li>
+      <li>O Vercel emite o <b>HTTPS (cadeado)</b> automaticamente.</li>
+      <li>Quando abrir no domínio da Peter, atualize o <b>link na bio</b> do Instagram para esse endereço.</li>
+    </ul>
+  </div></div>
+</div></section>
+
+<section><div class="wrap">
+  <div class="eyebrow">Depois (melhorias combinadas na reunião)</div>
+  <h2>Próxima versão da página</h2>
+  <ul style="margin:10px 0 0 18px">
+    <li style="margin:6px 0;font-size:14.5px">Trocar o WhatsApp para o <b>novo número de leads</b> (quando criado).</li>
+    <li style="margin:6px 0;font-size:14.5px">Adicionar o <b>tour virtual</b> com fotos internas do espaço (em vez da fachada).</li>
+    <li style="margin:6px 0;font-size:14.5px">Deixar pronto para o <b>Google Meu Negócio</b> e avaliações.</li>
+  </ul>
+  <p class="lead" style="margin-top:12px">Qualquer atualização dessas: eu ajusto o <code>index.html</code>, você dá um <b>commit</b> (ou eu subo) e o Vercel republica sozinho. Não precisa refazer nada do DNS.</p>
+</div></section>
+
+<footer>Peter Brinquedos · Guia de deploy · Vistrum</footer>
