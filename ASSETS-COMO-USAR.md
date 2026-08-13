@@ -13,16 +13,16 @@ Salve na mesma pasta de `21-manual-identidade-visual.html` e `13-pagina-conversa
 | Nome do arquivo | O que é |
 |---|---|
 | `logo-peter.png` | A logo oficial (selo com ursinho + trem + PETER) |
-| `fundo.jpg` | Foto de fundo da página de conversão (criança + blocos) |
-| `post-caminhao.jpg` | Criativo azul "Diversão que constrói" (caminhão) |
-| `post-boneca.jpg` | Criativo azul "Feito pra cada fase" (bebê frutinhas) |
-| `post-panelinha.jpg` | Criativo amarelo "Cada brincadeira ensina" (cozinha/chef) |
-| `post-ferramentas.jpg` | Criativo laranja "Imaginação em ação" (capacete + ferramentas) |
-| `post-carrinho.jpg` | Criativo vermelho "Hoje ela vira gente grande" (carrinho de mercado) |
-| `post-carriola.jpg` | Criativo amarelo "Diversão que desenvolve" (carriola) |
-| `produto-exemplo.jpg` | (opcional) Foto de um produto pro exemplo de catálogo |
+| `fundo.png` | Foto de fundo da página de conversão (criança + blocos) |
+| `post-caminhao.png` | Criativo azul "Diversão que constrói" (caminhão) |
+| `post-boneca.png` | Criativo azul "Feito pra cada fase" (bebê frutinhas) |
+| `post-panelinha.png` | Criativo amarelo "Cada brincadeira ensina" (cozinha/chef) |
+| `post-ferramentas.png` | Criativo laranja "Imaginação em ação" (capacete + ferramentas) |
+| `post-carrinho.png` | Criativo vermelho "Hoje ela vira gente grande" (carrinho de mercado) |
+| `post-carriola.png` | Criativo amarelo "Diversão que desenvolve" (carriola) |
+| `produto-exemplo.png` | (opcional) Foto de um produto pro exemplo de catálogo |
 
-Obs.: se o nome do seu arquivo tiver `.png` em vez de `.jpg`, é só renomear (ou me avisar que eu troco a extensão no HTML).
+Obs.: todos os HTML já estão configurados para `.png`. Só garanta que o nome do arquivo bate exatamente com a tabela acima (tudo minúsculo, sem espaços). Se você preferir outros nomes, me manda a lista que eu ajusto no HTML.
 
 ## Como abrir e exportar
 
