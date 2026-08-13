@@ -10,8 +10,10 @@
   *{box-sizing:border-box;margin:0;padding:0}
   body{
     font-family:var(--sans); color:var(--cream); min-height:100vh;
+    /* FOTO DE FUNDO: salve sua imagem como "fundo.jpg" ao lado deste arquivo (ou troque o nome abaixo). */
     background:
-      radial-gradient(120% 80% at 50% -10%, var(--board2), transparent 55%),
+      linear-gradient(180deg, rgba(15,26,22,.45), rgba(15,26,22,.86) 60%, rgba(15,26,22,.96)),
+      url('fundo.jpg') center/cover no-repeat,
       var(--board);
     display:flex; justify-content:center; padding:26px 18px 40px;
   }
@@ -27,6 +29,7 @@
   .logo .em{font-size:38px;line-height:1}
   .logo .n{font-family:var(--serif);font-weight:700;color:var(--sky);font-size:20px;letter-spacing:.3px;margin-top:2px}
   .logo .t{font-size:9px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--wood)}
+  .logo-img{object-fit:contain;padding:12px;display:block}
   /* Para usar a logo real: substitua o bloco .logo por:
      <img class="logo" src="LOGO_PETER.png" alt="Peter Brinquedos"> */
 
@@ -52,15 +55,20 @@
   .solid{background:var(--paper);color:var(--ink)}
   .ghost{background:rgba(255,255,255,.06);color:var(--cream);border-color:var(--line)}
 
-  .foot{margin-top:14px;text-align:center;color:#9FB3AC;font-size:12.5px}
+  .note{width:100%;margin-top:-4px;text-align:center;color:#E9EFEC;font-size:12.5px;font-weight:600;
+    background:rgba(0,0,0,.28);border:1px solid var(--line);border-radius:12px;padding:9px 12px}
+  .foot{margin-top:14px;text-align:center;color:#D7E0DB;font-size:12.5px}
   .foot b{color:var(--marigold);font-weight:700}
   @media (prefers-reduced-motion:reduce){.btn{transition:none}}
 </style>
 
 <div class="wrap">
 
-  <!-- LOGO: troque este bloco por <img class="logo" src="logo-peter.png" alt="Peter Brinquedos"> -->
-  <div class="logo" role="img" aria-label="Peter Brinquedos">
+  <!-- LOGO REAL: salve o PNG da logo da Peter como "logo-peter.png" ao lado deste arquivo.
+       Se o arquivo nao for encontrado, aparece o cartao de reserva abaixo automaticamente. -->
+  <img class="logo logo-img" src="logo-peter.png" alt="Peter Brinquedos"
+       onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+  <div class="logo" role="img" aria-label="Peter Brinquedos" style="display:none">
     <div class="em">🧸🚂</div>
     <div class="n">Peter Brinquedos</div>
     <div class="t">Brincou, Aprendeu!</div>
@@ -98,17 +106,12 @@
       <span class="arw">›</span>
     </a>
 
-    <a class="btn ghost" href="https://www.magazineluiza.com.br/lojista/peterbrinquedos/">
-      <span class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#F3EFE4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="18" cy="21" r="1"/><path d="M2 3h3l2.6 12.4a2 2 0 0 0 2 1.6h8.7a2 2 0 0 0 2-1.6L23 7H6"/></svg></span>
-      <span class="lbl">Comprar no Magazine Luiza<small>Compra segura pelo marketplace</small></span>
-      <span class="arw">›</span>
-    </a>
-
-    <a class="btn ghost" href="https://maps.google.com/?q=Peter+Brinquedos">
+    <a class="btn ghost" href="https://maps.app.goo.gl/M7pKX8Pk1SvYd5pJA">
       <span class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#F3EFE4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg></span>
-      <span class="lbl">Como chegar<small>Venha conhecer a loja</small></span>
+      <span class="lbl">Onde ficamos<small>Nosso estoque</small></span>
       <span class="arw">›</span>
     </a>
+    <p class="note">🗓️ Visitas somente com agendamento — combine antes pelo WhatsApp.</p>
 
   </div>
 
