@@ -26,11 +26,12 @@
   .eyebrow{font-size:12px;letter-spacing:.16em;text-transform:uppercase;font-weight:700;color:var(--marigold)}
   h1{font-family:var(--serif);font-size:clamp(28px,5vw,46px);line-height:1.05;margin:.2em 0 .3em}
   h2{font-family:var(--serif);font-size:clamp(22px,3vw,30px);margin:.2em 0 .3em}
+  h2 .clock{font-family:var(--sans);font-size:14px;font-weight:700;color:#fff;background:var(--wood);border-radius:999px;padding:3px 12px;vertical-align:middle;margin-left:8px}
   .lead{font-size:18px;color:#F1D9C6;max-width:60ch}
   .hero{background:radial-gradient(120% 90% at 85% -10%,var(--board-2),transparent 60%),var(--board);color:#F7EFE1;padding:80px 0 60px;position:relative;overflow:hidden}
   .hero:before{content:"";position:absolute;inset:0;opacity:.07;background-image:radial-gradient(#fff 1.4px,transparent 1.5px);background-size:24px 24px}
   .hero .wrap{position:relative}
-  section{padding:56px 0;border-top:1px solid var(--line)}
+  section{padding:52px 0;border-top:1px solid var(--line)}
   .intro-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:20px}
   @media(max-width:760px){.intro-grid{grid-template-columns:1fr}}
   .note{border:1px solid var(--line);border-radius:14px;padding:16px 18px;background:var(--surface)}
@@ -44,44 +45,46 @@
   .story{width:296px;height:526px;border-radius:26px;overflow:hidden;position:relative;box-shadow:var(--shadow);color:#fff;font-family:var(--sans);flex:0 0 auto;border:1px solid rgba(0,0,0,.15)}
   .story .photo{position:absolute;inset:0;display:grid;place-items:center;font-size:96px}
   .story .grain{position:absolute;inset:0;opacity:.12;background-image:radial-gradient(#000 1px,transparent 1.5px);background-size:16px 16px}
-  .story .scrim{position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.35) 0%,transparent 26%,transparent 52%,rgba(0,0,0,.72) 100%)}
+  .story .scrim{position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.35) 0%,transparent 26%,transparent 50%,rgba(0,0,0,.74) 100%)}
   .story .wm{position:absolute;top:16px;left:16px;font-family:var(--serif);font-weight:700;font-size:15px;text-shadow:0 1px 4px rgba(0,0,0,.5);display:flex;align-items:center;gap:6px}
   .story .kick{position:absolute;top:52px;left:16px;font-size:11px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;padding:5px 11px;border-radius:999px;color:#fff}
   .story .body{position:absolute;left:16px;right:16px;bottom:78px}
-  .story .body .small{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;opacity:.9;margin-bottom:4px}
-  .story .body .big{font-family:var(--serif);font-size:30px;line-height:1.08;text-shadow:0 2px 10px rgba(0,0,0,.5)}
+  .story .body .small{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;opacity:.92;margin-bottom:4px}
+  .story .body .big{font-family:var(--serif);font-size:28px;line-height:1.1;text-shadow:0 2px 10px rgba(0,0,0,.5)}
   .story .body .big u{text-decoration-color:var(--marigold);text-underline-offset:3px}
-  .story .body .price{font-family:var(--serif);font-size:38px;line-height:1;margin-top:6px}
+  .story .body .price{font-family:var(--serif);font-size:36px;line-height:1;margin-top:6px}
   .story .body .price small{font-size:15px;font-family:var(--sans)}
+  .story .body .brinde{display:inline-block;margin-top:8px;background:var(--marigold);color:#3a2a08;font-size:12px;font-weight:800;border-radius:8px;padding:4px 9px}
   .story .sticker{position:absolute;left:16px;right:16px;bottom:22px;display:flex;justify-content:center}
   .story .sticker .s{background:rgba(255,255,255,.94);color:#2A211A;border-radius:12px;padding:7px 12px;font-size:12.5px;font-weight:700;box-shadow:0 6px 16px -6px rgba(0,0,0,.5);display:flex;gap:8px;align-items:center}
   .story .sticker .s.poll{flex-direction:column;gap:5px;padding:9px 12px;width:100%}
   .story .sticker .poll .q{font-size:12px;font-weight:800}
   .story .sticker .poll .opts{display:flex;gap:6px;width:100%}
   .story .sticker .poll .opts span{flex:1;text-align:center;background:#F1E6D8;border-radius:8px;padding:5px 0;font-size:11.5px}
-  .ph-cap{position:absolute;bottom:118px;left:0;right:0;text-align:center;font-size:10px;letter-spacing:.1em;text-transform:uppercase;opacity:.6}
+  .ph-cap{position:absolute;bottom:120px;left:0;right:0;text-align:center;font-size:10px;letter-spacing:.1em;text-transform:uppercase;opacity:.6}
 
-  /* photo background tones per template */
-  .bg-menu{background:linear-gradient(160deg,#7a2c1e,#3c1a12)}
-  .bg-cake{background:linear-gradient(160deg,#c9902f,#6E4426)}
-  .bg-promo{background:linear-gradient(160deg,#8E2A22,#4a130f)}
-  .bg-open{background:linear-gradient(160deg,#caa24a,#8E2A22)}
+  /* photo background tones per family */
+  .bg-bread{background:linear-gradient(160deg,#caa24a,#8E2A22)}
   .bg-prod{background:linear-gradient(160deg,#3a2a20,#120b08)}
+  .bg-menu{background:linear-gradient(160deg,#7a2c1e,#3c1a12)}
+  .bg-promo{background:linear-gradient(160deg,#8E2A22,#4a130f)}
+  .bg-cake{background:linear-gradient(160deg,#c9902f,#6E4426)}
+  .bg-pan{background:linear-gradient(160deg,#5a3320,#241009)}
 
-  .k-menu{background:var(--board)} .k-cake{background:#B07A1E} .k-promo{background:var(--marigold);color:#3a2a08 !important} .k-open{background:var(--wood)} .k-prod{background:#2A211A}
+  .k-open{background:var(--wood)} .k-prod{background:#2A211A} .k-menu{background:var(--board)}
+  .k-promo{background:var(--marigold);color:#3a2a08 !important} .k-cake{background:#B07A1E} .k-ready{background:var(--leaf)}
 
-  .spec h2 .em{font-size:.8em}
   .spec .row{display:flex;gap:10px;padding:9px 0;border-bottom:1px dashed var(--line);font-size:14px}
   .spec .row b{flex:0 0 128px;color:var(--board)}
   .spec .row span{color:var(--ink)}
   .spec .tag{display:inline-block;font-size:11px;font-weight:700;color:#fff;border-radius:999px;padding:2px 10px;margin-bottom:8px}
 
-  .day{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin-top:18px}
+  .day{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:18px}
   @media(max-width:760px){.day{grid-template-columns:1fr 1fr}}
-  .step{border:1px solid var(--line);border-radius:12px;padding:12px;background:var(--surface)}
-  .step .h{font-size:12px;font-weight:800;color:var(--board)}
-  .step .t{font-size:13px;margin-top:3px}
-  .step .w{font-size:11px;color:var(--muted);margin-top:6px}
+  .step{border:1px solid var(--line);border-radius:12px;padding:11px 13px;background:var(--surface);border-left:4px solid var(--marigold)}
+  .step .h{font-size:13px;font-weight:800;color:var(--board)}
+  .step .t{font-size:13.5px;margin-top:2px;font-weight:600}
+  .step .w{font-size:11.5px;color:var(--muted);margin-top:4px}
 
   .rules{list-style:none;padding:0;margin:14px 0 0;display:grid;grid-template-columns:1fr 1fr;gap:10px}
   @media(max-width:760px){.rules{grid-template-columns:1fr}}
@@ -94,150 +97,184 @@
 <header class="hero"><div class="wrap">
   <div class="eyebrow">Sistema de Stories · uso diário</div>
   <h1>Modelos de Stories da Vovó Vaci</h1>
-  <p class="lead">Cinco modelos para postar todo dia sem pensar. A equipe só troca a foto e o texto: a moldura, as cores e as figurinhas já vêm prontas, pra tudo parecer da mesma casa.</p>
+  <p class="lead">Oito modelos para cobrir o dia inteiro sem pensar. A equipe só troca a foto e o texto: a moldura, as cores e as figurinhas já vêm prontas, pra tudo parecer da mesma casa.</p>
 </div></header>
 
 <section><div class="wrap">
   <div class="eyebrow" style="color:var(--wood)">Como o sistema funciona</div>
-  <h2>Uma moldura só, cinco recados</h2>
+  <h2>Uma moldura só, o dia inteiro</h2>
   <div class="intro-grid">
-    <div class="note"><h3>Cor que identifica</h3><p>Cada tipo tem uma cor de etiqueta. Com o tempo, o cliente reconhece "o vermelho é o cardápio, o dourado é o bolo" sem nem ler.</p></div>
+    <div class="note"><h3>Cor que identifica</h3><p>Vermelho é refeição, dourado é doce/oferta, marrom-madeira é pão, escuro é bastidor. O cliente aprende a ler a marca sem ler o texto.</p></div>
     <div class="note"><h3>Figurinha em quase todo story</h3><p>Enquete, pergunta ou lembrete. A figurinha gera resposta, e resposta é o sinal que faz o Instagram mostrar o story pra mais gente.</p></div>
     <div class="note"><h3>Foto real sempre</h3><p>A foto é o fundo. Nada de banco de imagem: o pão de verdade, o bolo de verdade, a Vovó de verdade. É o que funciona em 2026.</p></div>
   </div>
 </div></section>
 
 <section><div class="wrap">
-  <div class="eyebrow" style="color:var(--wood)">Os 5 modelos</div>
-  <h2>1 · Cardápio do dia</h2>
-  <div class="tpl">
-    <div class="story bg-menu">
-      <div class="photo">🍽️</div><div class="grain"></div><div class="scrim"></div>
-      <div class="wm">🥖 Vovó Vaci</div>
-      <div class="kick k-menu">Cardápio de hoje</div>
-      <div class="ph-cap">[ foto do prato do dia ]</div>
-      <div class="body"><div class="small">Almoço · seg a sáb</div><div class="big">Hoje tem <u>frango caipira</u> com quiabo e arroz de forno</div></div>
-      <div class="sticker"><div class="s poll"><div class="q">Vai passar aqui hoje? 😋</div><div class="opts"><span>Bora!</span><span>Tô chegando</span></div></div></div>
-    </div>
-    <div class="spec">
-      <span class="tag" style="background:var(--board)">Diário · ~10h30</span>
-      <div class="row"><b>O que é</b><span>O prato do dia, postado antes do almoço para puxar movimento na hora certa.</span></div>
-      <div class="row"><b>O que muda</b><span>A foto do prato e o texto "Hoje tem {prato}". Só isso.</span></div>
-      <div class="row"><b>Figurinha</b><span>Enquete "Vai passar aqui hoje?" ou figurinha de "fome 🤤".</span></div>
-      <div class="row"><b>Melhor horário</b><span>Entre 10h e 11h, quando a cidade decide onde almoçar.</span></div>
-      <div class="row"><b>Dica</b><span>Se der, um segundo story com o preço do prato feito e "peça pelo WhatsApp".</span></div>
-    </div>
-  </div>
-</div></section>
+  <div class="eyebrow" style="color:var(--wood)">Os 8 modelos, na ordem do dia</div>
 
-<section><div class="wrap">
-  <h2>2 · Bolo do dia</h2>
+  <h2>1 · Abertura <span class="clock">7h</span></h2>
   <div class="tpl">
-    <div class="story bg-cake">
-      <div class="photo">🍰</div><div class="grain"></div><div class="scrim"></div>
-      <div class="wm">🥖 Vovó Vaci</div>
-      <div class="kick k-cake">Bolo do dia</div>
-      <div class="ph-cap">[ foto do bolo/fatia ]</div>
-      <div class="body"><div class="small">Fresquinho, feito hoje</div><div class="big"><u>Cenoura</u> com brigadeiro cremoso</div></div>
-      <div class="sticker"><div class="s">🍰 Quero um pedaço <span style="background:var(--board);color:#fff;border-radius:7px;padding:2px 7px">toca aqui</span></div></div>
-    </div>
-    <div class="spec">
-      <span class="tag" style="background:#B07A1E">Diário · ~14h</span>
-      <div class="row"><b>O que é</b><span>O bolo/torta do dia, na hora do café da tarde. Puxa a segunda visita do dia.</span></div>
-      <div class="row"><b>O que muda</b><span>A foto e o nome do bolo. Um close com a fatia cortada rende mais que o bolo inteiro.</span></div>
-      <div class="row"><b>Figurinha</b><span>Link/DM "Quero um pedaço" ou enquete "doce ou salgado no café?".</span></div>
-      <div class="row"><b>Melhor horário</b><span>Entre 14h e 15h30, antes do cafezinho da tarde.</span></div>
-      <div class="row"><b>Dica</b><span>Vapor, calda escorrendo, a faca cortando. Movimento dá água na boca.</span></div>
-    </div>
-  </div>
-</div></section>
-
-<section><div class="wrap">
-  <h2>3 · Promoção do dia</h2>
-  <div class="tpl">
-    <div class="story bg-promo">
-      <div class="photo">🥖</div><div class="grain"></div><div class="scrim"></div>
-      <div class="wm">🥖 Vovó Vaci</div>
-      <div class="kick k-promo">Só hoje</div>
-      <div class="ph-cap">[ foto do produto em oferta ]</div>
-      <div class="body"><div class="small">Oferta do dia</div><div class="big">Pão francês quentinho</div><div class="price">R$ 12,90<small> /kg</small></div></div>
-      <div class="sticker"><div class="s">⏰ Ative o lembrete <span style="background:var(--marigold);color:#3a2a08;border-radius:7px;padding:2px 7px">até 12h</span></div></div>
-    </div>
-    <div class="spec">
-      <span class="tag" style="background:var(--marigold);color:#3a2a08">Quando houver · manhã</span>
-      <div class="row"><b>O que é</b><span>A oferta do dia, com prazo curto ("só hoje", "até meio-dia") para criar urgência real.</span></div>
-      <div class="row"><b>O que muda</b><span>A foto, o produto e o preço. A etiqueta dourada "Só hoje" é fixa.</span></div>
-      <div class="row"><b>Figurinha</b><span>Contagem regressiva (lembrete) ou "arrasta pra cima/toca" pro WhatsApp.</span></div>
-      <div class="row"><b>Melhor horário</b><span>Cedo, 7h a 9h, para a oferta pegar o dia todo.</span></div>
-      <div class="row"><b>Cuidado</b><span>Promoção é o menor volume. Use com parcimônia pra não virar "loja de promoção".</span></div>
-    </div>
-  </div>
-</div></section>
-
-<section><div class="wrap">
-  <h2>4 · Abertura da loja</h2>
-  <div class="tpl">
-    <div class="story bg-open">
+    <div class="story bg-bread">
       <div class="photo">☀️</div><div class="grain"></div><div class="scrim"></div>
-      <div class="wm">🥖 Vovó Vaci</div>
-      <div class="kick k-open">Abrimos ☀️</div>
-      <div class="ph-cap">[ pão saindo / porta abrindo ]</div>
-      <div class="body"><div class="small">Bom dia, Itumbiara!</div><div class="big">Pão <u>quentinho</u> saindo agora</div></div>
+      <div class="wm">🥖 Vovó Vaci</div><div class="kick k-open">Abrimos ☀️</div>
+      <div class="ph-cap">[ porta abrindo / balcão pronto ]</div>
+      <div class="body"><div class="small">Bom dia, Itumbiara!</div><div class="big">A Vovó Vaci <u>já tá aberta</u> pro seu café</div></div>
       <div class="sticker"><div class="s">☕ Bom dia! <span style="background:var(--wood);color:#fff;border-radius:7px;padding:2px 7px">responde aí</span></div></div>
     </div>
-    <div class="spec">
-      <span class="tag" style="background:var(--wood)">Diário · 6h05</span>
-      <div class="row"><b>O que é</b><span>O primeiro story do dia. Marca presença cedo e cria o hábito de "abrir o story da Vovó no café".</span></div>
-      <div class="row"><b>O que muda</b><span>A foto do dia (pão saindo, a porta abrindo, o balcão pronto) e o "bom dia".</span></div>
-      <div class="row"><b>Figurinha</b><span>Figurinha de "bom dia" ou pergunta "o que você vai querer hoje?".</span></div>
-      <div class="row"><b>Melhor horário</b><span>Na abertura, 6h a 6h30. Recência conta muito em Stories.</span></div>
-      <div class="row"><b>Dica</b><span>Nos fins de semana, virar o convite do café colonial: "Sábado é dia de café colonial ☕".</span></div>
+    <div class="spec"><span class="tag" style="background:var(--wood)">Diário · 7h</span>
+      <div class="row"><b>O que é</b><span>O primeiro story do dia. Marca presença cedo e cria o hábito de abrir o story da Vovó no café.</span></div>
+      <div class="row"><b>O que muda</b><span>A foto (porta abrindo, balcão montado) e o "bom dia".</span></div>
+      <div class="row"><b>Figurinha</b><span>Figurinha de "bom dia" ou pergunta "o que vai querer hoje?".</span></div>
+      <div class="row"><b>Fim de semana</b><span>Vira o convite do café colonial: "Sábado é dia de café colonial ☕".</span></div>
     </div>
   </div>
-</div></section>
 
-<section><div class="wrap">
-  <h2>5 · Produção (bastidores)</h2>
+  <h2>2 · Produção <span class="clock">7h30</span></h2>
   <div class="tpl">
     <div class="story bg-prod">
       <div class="photo">👩‍🍳</div><div class="grain"></div><div class="scrim"></div>
-      <div class="wm">🥖 Vovó Vaci</div>
-      <div class="kick k-prod">Saindo do forno</div>
+      <div class="wm">🥖 Vovó Vaci</div><div class="kick k-prod">Nos bastidores</div>
       <div class="ph-cap">[ a mão / a Vovó fazendo ]</div>
-      <div class="body"><div class="small">Nos bastidores</div><div class="big">Feito à mão, <u>como a Vovó faz</u></div></div>
+      <div class="body"><div class="small">Começou cedo</div><div class="big">Feito à mão, <u>como a Vovó faz</u></div></div>
       <div class="sticker"><div class="s poll"><div class="q">Adivinha o que vem aí? 👀</div><div class="opts"><span>Pão de queijo</span><span>Sonho</span></div></div></div>
     </div>
-    <div class="spec">
-      <span class="tag" style="background:#2A211A">Diário · variável</span>
+    <div class="spec"><span class="tag" style="background:#2A211A">Diário · 7h30</span>
       <div class="row"><b>O que é</b><span>O conteúdo cru e humano: a cozinha, a massa, a Vovó, a equipe. O que mais cria vínculo em 2026.</span></div>
-      <div class="row"><b>O que muda</b><span>O vídeo curto do momento da produção. Som real (masseira, forno) vale ouro.</span></div>
-      <div class="row"><b>Figurinha</b><span>Quiz "adivinha o que vem aí?" ou pergunta "quer ver mais bastidor?".</span></div>
-      <div class="row"><b>Melhor horário</b><span>Meio da manhã ou meio da tarde, entre os picos.</span></div>
-      <div class="row"><b>Dica</b><span>Vídeo vertical, sem edição pesada. Quanto mais real, melhor. Mostrar a Vovó é sempre o campeão.</span></div>
+      <div class="row"><b>O que muda</b><span>O vídeo curto da produção. Som real (masseira, forno) vale ouro.</span></div>
+      <div class="row"><b>Figurinha</b><span>Quiz "adivinha o que vem aí?" ou "quer ver mais bastidor?".</span></div>
+      <div class="row"><b>Dica</b><span>Vídeo vertical, sem edição pesada. Mostrar a Vovó é sempre o campeão.</span></div>
+    </div>
+  </div>
+
+  <h2>3 · Cardápio do dia <span class="clock">8h</span></h2>
+  <div class="tpl">
+    <div class="story bg-menu">
+      <div class="photo">🍽️</div><div class="grain"></div><div class="scrim"></div>
+      <div class="wm">🥖 Vovó Vaci</div><div class="kick k-menu">Almoço de hoje</div>
+      <div class="ph-cap">[ foto do prato do dia ]</div>
+      <div class="body"><div class="small">Já planeja seu almoço 😋</div><div class="big">Hoje tem <u>frango caipira</u> com quiabo e arroz de forno</div></div>
+      <div class="sticker"><div class="s poll"><div class="q">Vai querer hoje?</div><div class="opts"><span>Separa o meu!</span><span>Talvez</span></div></div></div>
+    </div>
+    <div class="spec"><span class="tag" style="background:var(--board)">Diário · 8h</span>
+      <div class="row"><b>O que é</b><span>O prato do dia, postado cedo pra pessoa já decidir de manhã onde vai almoçar. (Perto do meio-dia já é tarde demais.)</span></div>
+      <div class="row"><b>O que muda</b><span>A foto do prato e o texto "Hoje tem {prato}".</span></div>
+      <div class="row"><b>Figurinha</b><span>Enquete "Vai querer hoje?" ou "separa o meu".</span></div>
+      <div class="row"><b>Dica</b><span>Cita 2 ou 3 acompanhamentos: dá fartura e ajuda a decidir.</span></div>
+    </div>
+  </div>
+
+  <h2>4 · Item / Promoção do dia <span class="clock">8h30</span></h2>
+  <div class="tpl">
+    <div class="story bg-promo">
+      <div class="photo">🥖</div><div class="grain"></div><div class="scrim"></div>
+      <div class="wm">🥖 Vovó Vaci</div><div class="kick k-promo">Só hoje</div>
+      <div class="ph-cap">[ foto do item em destaque ]</div>
+      <div class="body"><div class="small">Destaque do dia</div><div class="big">Pão de queijo quentinho</div><div class="price">R$ 3,50<small> /un</small></div></div>
+      <div class="sticker"><div class="s">⏰ Ative o lembrete <span style="background:var(--marigold);color:#3a2a08;border-radius:7px;padding:2px 7px">até 12h</span></div></div>
+    </div>
+    <div class="spec"><span class="tag" style="background:var(--marigold);color:#3a2a08">Diário · 8h30</span>
+      <div class="row"><b>O que é</b><span>O item em destaque do dia, ou uma oferta com prazo curto ("só hoje") pra criar urgência real.</span></div>
+      <div class="row"><b>O que muda</b><span>A foto, o item e o preço. A etiqueta dourada "Só hoje" é fixa quando é oferta.</span></div>
+      <div class="row"><b>Figurinha</b><span>Contagem regressiva (lembrete) ou toque pro WhatsApp.</span></div>
+      <div class="row"><b>Cuidado</b><span>Nem todo dia precisa ser desconto. Pode ser só o "queridinho do dia", sem baixar preço.</span></div>
+    </div>
+  </div>
+
+  <h2>5 · Almoço pronto, só chegar <span class="clock">11h</span></h2>
+  <div class="tpl">
+    <div class="story bg-menu">
+      <div class="photo">🍛</div><div class="grain"></div><div class="scrim"></div>
+      <div class="wm">🥖 Vovó Vaci</div><div class="kick k-ready">Tá servido</div>
+      <div class="ph-cap">[ o buffet / a marmita montada ]</div>
+      <div class="body"><div class="small">Fome? É só chegar</div><div class="big">Almoço <u>quentinho</u> te esperando agora</div><span class="brinde">🎁 Hoje o cafezinho é por nossa conta</span></div>
+      <div class="sticker"><div class="s">🍽️ Tô chegando! <span style="background:var(--board);color:#fff;border-radius:7px;padding:2px 7px">peça no zap</span></div></div>
+    </div>
+    <div class="spec"><span class="tag" style="background:var(--leaf)">Diário · 11h</span>
+      <div class="row"><b>O que é</b><span>O empurrão final na hora que a fome aperta: "já tá pronto, é só chegar". Tira a fricção e fecha a decisão do almoço.</span></div>
+      <div class="row"><b>O que muda</b><span>A foto do buffet/marmita e o brinde do dia (cafezinho, sobremesa ou refri).</span></div>
+      <div class="row"><b>O brinde</b><span>Rotacione: "cafezinho por conta", "sobremesa grátis", "suco no almoço". O brinde é o gatilho.</span></div>
+      <div class="row"><b>Figurinha</b><span>Link/atalho pro WhatsApp ("peça a marmita") ou "tô chegando!".</span></div>
+      <div class="row"><b>Melhor horário</b><span>11h a 11h30, logo antes do pico do almoço.</span></div>
+    </div>
+  </div>
+
+  <h2>6 · Bolo do dia <span class="clock">13h</span></h2>
+  <div class="tpl">
+    <div class="story bg-cake">
+      <div class="photo">🍰</div><div class="grain"></div><div class="scrim"></div>
+      <div class="wm">🥖 Vovó Vaci</div><div class="kick k-cake">Bolo do dia</div>
+      <div class="ph-cap">[ foto do bolo / fatia ]</div>
+      <div class="body"><div class="small">Fresquinho, feito hoje</div><div class="big"><u>Cenoura</u> com brigadeiro cremoso</div></div>
+      <div class="sticker"><div class="s">🍰 Quero um pedaço <span style="background:var(--board);color:#fff;border-radius:7px;padding:2px 7px">toca aqui</span></div></div>
+    </div>
+    <div class="spec"><span class="tag" style="background:#B07A1E">Diário · 13h</span>
+      <div class="row"><b>O que é</b><span>O bolo/torta do dia, logo após o almoço, mirando a sobremesa e o café da tarde.</span></div>
+      <div class="row"><b>O que muda</b><span>A foto e o nome do bolo. Um close com a fatia cortada rende mais que o bolo inteiro.</span></div>
+      <div class="row"><b>Figurinha</b><span>Link/DM "Quero um pedaço" ou enquete "doce ou salgado no café?".</span></div>
+      <div class="row"><b>Dica</b><span>Vapor, calda escorrendo, a faca cortando. Movimento dá água na boca.</span></div>
+    </div>
+  </div>
+
+  <h2>7 · Panorama da padaria <span class="clock">15h</span></h2>
+  <div class="tpl">
+    <div class="story bg-pan">
+      <div class="photo">🏠</div><div class="grain"></div><div class="scrim"></div>
+      <div class="wm">🥖 Vovó Vaci</div><div class="kick k-prod">Passa aqui</div>
+      <div class="ph-cap">[ panorâmica do balcão / vitrine ]</div>
+      <div class="body"><div class="small">A tarde na Vovó Vaci</div><div class="big">Tem <u>de tudo fresquinho</u> te esperando</div></div>
+      <div class="sticker"><div class="s poll"><div class="q">O que você viria buscar? 🤤</div><div class="opts"><span>Salgado</span><span>Café</span></div></div></div>
+    </div>
+    <div class="spec"><span class="tag" style="background:#2A211A">Diário · 15h</span>
+      <div class="row"><b>O que é</b><span>Uma visão geral da padaria no meio da tarde: a vitrine cheia, o balcão, o ambiente. Convida a visita e mostra fartura.</span></div>
+      <div class="row"><b>O que muda</b><span>Um vídeo panorâmico do dia (girando pela loja) ou uma foto ampla da vitrine.</span></div>
+      <div class="row"><b>Figurinha</b><span>Enquete "o que você viria buscar?" ou pergunta aberta.</span></div>
+      <div class="row"><b>Dica</b><span>Mostrar gente na loja (com jeito) passa a sensação de "tá cheio, é bom".</span></div>
+    </div>
+  </div>
+
+  <h2>8 · Pão quentinho <span class="clock">16h · 18h</span></h2>
+  <div class="tpl">
+    <div class="story bg-bread">
+      <div class="photo">🥖</div><div class="grain"></div><div class="scrim"></div>
+      <div class="wm">🥖 Vovó Vaci</div><div class="kick k-open">Em breve</div>
+      <div class="ph-cap">[ forno / pão dourando ]</div>
+      <div class="body"><div class="small">Guarde um lugar no coração</div><div class="big">Pão <u>quentinho</u> saindo às 18h</div></div>
+      <div class="sticker"><div class="s">⏰ Me avisa quando sair <span style="background:var(--wood);color:#fff;border-radius:7px;padding:2px 7px">lembrete</span></div></div>
+    </div>
+    <div class="spec"><span class="tag" style="background:var(--wood)">Diário · 16h (teaser) + 18h (saindo)</span>
+      <div class="row"><b>O que é</b><span>O clássico da tarde/noite, em dois tempos: às 16h o aviso ("sai às 18h") e às 18h a confirmação ("saindo agora, corre").</span></div>
+      <div class="row"><b>16h · em breve</b><span>Etiqueta "Em breve", texto "sai às 18h", figurinha de lembrete. Cria expectativa.</span></div>
+      <div class="row"><b>18h · saindo</b><span>Etiqueta "Saindo agora 🔥", texto "quentinho, corre!", figurinha "tô indo!". A conversão.</span></div>
+      <div class="row"><b>Dica</b><span>No de 18h, close no vapor e no pão sendo ensacado. É o gatilho de sair de casa.</span></div>
     </div>
   </div>
 </div></section>
 
 <section><div class="wrap">
   <div class="eyebrow" style="color:var(--wood)">Na prática</div>
-  <h2>A sequência de um dia comum</h2>
-  <p style="color:var(--muted);max-width:60ch">De 4 a 6 stories por dia, distribuídos. Não precisa ser todos, mas abertura + cardápio + um bastidor já fazem o básico girar.</p>
+  <h2>A grade do dia (9 stories)</h2>
+  <p style="color:var(--muted);max-width:62ch">A sequência completa. Nem todo dia sai perfeito, e tudo bem: abertura + cardápio + almoço pronto + pão das 18h já sustentam o essencial.</p>
   <div class="day">
-    <div class="step"><div class="h">6h05</div><div class="t">Abertura ☀️</div><div class="w">Pão quentinho + bom dia</div></div>
-    <div class="step"><div class="h">9h30</div><div class="t">Produção 👩‍🍳</div><div class="w">Bastidor + quiz</div></div>
-    <div class="step"><div class="h">10h30</div><div class="t">Cardápio 🍽️</div><div class="w">Prato do dia + enquete</div></div>
-    <div class="step"><div class="h">14h</div><div class="t">Bolo do dia 🍰</div><div class="w">Fatia + "quero um pedaço"</div></div>
-    <div class="step"><div class="h">16h30</div><div class="t">Prova/repost 🧡</div><div class="w">Cliente marcou? Reposta</div></div>
+    <div class="step"><div class="h">7h</div><div class="t">☀️ Abertura</div><div class="w">Bom dia + "já abrimos"</div></div>
+    <div class="step"><div class="h">7h30</div><div class="t">👩‍🍳 Produção</div><div class="w">Bastidor + quiz</div></div>
+    <div class="step"><div class="h">8h</div><div class="t">🍽️ Cardápio do dia</div><div class="w">Prato do dia + enquete (cedo!)</div></div>
+    <div class="step"><div class="h">8h30</div><div class="t">🥖 Item/Promoção</div><div class="w">Destaque do dia + lembrete</div></div>
+    <div class="step"><div class="h">11h</div><div class="t">🍛 Almoço pronto</div><div class="w">"Só chegar" + brinde</div></div>
+    <div class="step"><div class="h">13h</div><div class="t">🍰 Bolo do dia</div><div class="w">Fatia + "quero um pedaço"</div></div>
+    <div class="step"><div class="h">15h</div><div class="t">🏠 Panorama</div><div class="w">Vitrine cheia + enquete</div></div>
+    <div class="step"><div class="h">16h</div><div class="t">⏰ Pão em breve</div><div class="w">"Sai às 18h" + lembrete</div></div>
+    <div class="step"><div class="h">18h</div><div class="t">🥖 Pão saindo</div><div class="w">"Quentinho, corre!"</div></div>
   </div>
 
   <h2 style="margin-top:34px">Regras de ouro</h2>
   <ul class="rules">
     <li>Sempre foto ou vídeo <b>real</b> de fundo. A moldura é a mesma; o conteúdo é de verdade.</li>
     <li><b>Uma figurinha</b> por story sempre que der. Resposta é o que empurra o alcance.</li>
-    <li>Mantenha a <b>etiqueta na cor certa</b>. É o que faz o cliente reconhecer a marca sem ler.</li>
+    <li>Mantenha a <b>cor certa</b> por tipo. É o que faz o cliente reconhecer a marca sem ler.</li>
     <li>Repost de cliente que marcou a Vovó Vaci: <b>sempre</b>. Prova social diária de graça.</li>
     <li>Texto curto e grande. Story se lê em <b>2 segundos</b>, de longe.</li>
-    <li>Fim de semana: a abertura vira <b>convite do café colonial</b>.</li>
+    <li>Cardápio <b>cedo</b> (8h) e almoço pronto <b>na fome</b> (11h): os dois tempos da decisão do almoço.</li>
   </ul>
 </div></section>
 
