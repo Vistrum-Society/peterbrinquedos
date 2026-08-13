@@ -1,0 +1,235 @@
+<title>Vovó Vaci · Grade do Mês</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+  :root{
+    --paper:#FBF5EB; --surface:#FFFFFF; --ink:#2A211A; --muted:#8A7A68;
+    --line:#EADECB; --board:#8E2A22; --board-2:#A6382D;
+    --wood:#6E4426; --gold:#E0A13A; --leaf:#5C7A52;
+    --prod:#8E2A22; --trad:#6E4426; --proof:#5C7A52; --conv:#C6871F;
+    --shadow:0 16px 38px -20px rgba(142,42,34,.45);
+    --serif:Georgia,"Times New Roman",serif;
+    --sans:"Segoe UI",system-ui,-apple-system,"Helvetica Neue",Arial,sans-serif;
+  }
+  @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+    --paper:#1A1412; --surface:#241B18; --ink:#F1E6D8; --muted:#B0A091;
+    --line:#3A2C26; --board:#B0433A; --board-2:#8E2A22; --wood:#C08A55; --gold:#EDB755; --leaf:#84A277;
+    --prod:#C24A3E; --trad:#C08A55; --proof:#84A277; --conv:#EDB755;}}
+  :root[data-theme="dark"]{
+    --paper:#1A1412; --surface:#241B18; --ink:#F1E6D8; --muted:#B0A091;
+    --line:#3A2C26; --board:#B0433A; --board-2:#8E2A22; --wood:#C08A55; --gold:#EDB755; --leaf:#84A277;
+    --prod:#C24A3E; --trad:#C08A55; --proof:#84A277; --conv:#EDB755;}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:var(--paper);color:var(--ink);font-family:var(--sans);line-height:1.5}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 22px}
+  .toggle{position:fixed;top:14px;right:14px;z-index:20;border:1px solid var(--line);background:var(--surface);color:var(--ink);border-radius:999px;padding:7px 13px;font:600 13px var(--sans);cursor:pointer;box-shadow:var(--shadow)}
+  .toggle:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+  .eyebrow{font-size:12px;letter-spacing:.16em;text-transform:uppercase;font-weight:700;color:var(--gold)}
+  h1{font-family:var(--serif);font-size:clamp(27px,5vw,44px);line-height:1.05;margin:.18em 0 .3em}
+  h2{font-family:var(--serif);font-size:22px;margin:0}
+  .lead{font-size:17px;color:#F1D9C6;max-width:60ch}
+
+  .hero{background:radial-gradient(120% 90% at 85% -10%,var(--board-2),transparent 60%),var(--board);color:#F7EFE1;padding:66px 0 48px;position:relative;overflow:hidden}
+  .hero:before{content:"";position:absolute;inset:0;opacity:.07;background-image:radial-gradient(#fff 1.3px,transparent 1.5px);background-size:22px 22px}
+  .hero .wrap{position:relative}
+
+  section{padding:44px 0;border-top:1px solid var(--line)}
+  /* legend + rhythm */
+  .legend{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px}
+  .lg{display:flex;align-items:center;gap:8px;border:1px solid var(--line);background:var(--surface);border-radius:999px;padding:6px 13px;font-size:13px;font-weight:600}
+  .dot{width:11px;height:11px;border-radius:50%}
+  .panel{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:18px}
+  @media(max-width:720px){.panel{grid-template-columns:1fr}}
+  .card-note{border:1px solid var(--line);border-radius:14px;padding:16px 18px;background:var(--surface)}
+  .card-note h3{font-size:14px;color:var(--board);margin-bottom:6px}
+  .card-note p,.card-note li{font-size:13.5px;color:var(--muted)}
+  .card-note ul{padding-left:16px;margin-top:4px}
+
+  .weekhead{display:flex;align-items:baseline;gap:12px;margin-bottom:4px}
+  .weekhead .tagline{font-size:14px;color:var(--muted)}
+
+  .posts{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:16px}
+  @media(max-width:760px){.posts{grid-template-columns:1fr}}
+  .post{border:1px solid var(--line);border-left:5px solid var(--pc,var(--board));border-radius:14px;background:var(--surface);padding:15px 17px;box-shadow:var(--shadow);break-inside:avoid}
+  .post.prod{--pc:var(--prod)} .post.trad{--pc:var(--trad)} .post.proof{--pc:var(--proof)} .post.conv{--pc:var(--conv)}
+  .post .top{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:9px}
+  .badge{font-size:10.5px;font-weight:800;letter-spacing:.04em;text-transform:uppercase;border-radius:999px;padding:3px 9px;color:#fff;background:var(--pc)}
+  .fmt{font-size:11px;font-weight:700;color:var(--ink);background:var(--paper);border:1px solid var(--line);border-radius:999px;padding:3px 9px}
+  .when{margin-left:auto;font-size:12px;font-weight:700;color:var(--muted)}
+  .hook{font-family:var(--serif);font-size:18.5px;line-height:1.2;color:var(--ink);margin:2px 0 4px;text-wrap:balance}
+  .fw{font-size:11.5px;color:var(--pc);font-weight:700;margin-bottom:8px}
+  .rowline{font-size:13px;margin:5px 0;display:flex;gap:8px}
+  .rowline b{flex:0 0 76px;color:var(--board);font-weight:700}
+  .rowline span{color:var(--ink)}
+  .cta{display:inline-block;font-size:11.5px;font-weight:800;text-transform:uppercase;letter-spacing:.05em;color:#fff;background:var(--pc);border-radius:6px;padding:2px 8px}
+  .tags{font-family:ui-monospace,Consolas,monospace;font-size:11.5px;color:var(--muted)}
+
+  .stories-strip{display:flex;flex-wrap:wrap;gap:7px;margin-top:14px}
+  .st{font-size:12px;font-weight:600;background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:6px 10px}
+  .st b{color:var(--board)}
+
+  footer{padding:30px 0 56px;color:var(--muted);font-size:13px;border-top:1px solid var(--line)}
+  a.ref{color:var(--board);font-weight:600}
+</style>
+
+<button class="toggle" id="tg">Tema</button>
+
+<header class="hero"><div class="wrap">
+  <div class="eyebrow">Grade editorial · Mês 1 do piloto</div>
+  <h1>O mês da Vovó Vaci, com tema e gancho prontos</h1>
+  <p class="lead">8 posts de feed que sustentam o mês, cada um com o gancho escrito, rodando por cima dos Stories diários. É só gravar, escrever a legenda e publicar.</p>
+</div></header>
+
+<section><div class="wrap">
+  <div class="eyebrow" style="color:var(--wood)">Como ler</div>
+  <div class="legend">
+    <span class="lg"><span class="dot" style="background:var(--prod)"></span>Produto que dá fome</span>
+    <span class="lg"><span class="dot" style="background:var(--trad)"></span>Tradição &amp; gente</span>
+    <span class="lg"><span class="dot" style="background:var(--proof)"></span>Prova &amp; comunidade</span>
+    <span class="lg"><span class="dot" style="background:var(--conv)"></span>Conversão</span>
+  </div>
+  <div class="panel">
+    <div class="card-note"><h3>O ritmo</h3><ul>
+      <li>2 posts de feed por semana (1 Reel + 1 carrossel/Reel) = 8 no mês.</li>
+      <li>Stories todo dia (o sistema de 9 stories, arquivo 17).</li>
+      <li>Café colonial: âncora fixa de sábado nos Stories.</li>
+      <li>Melhores janelas: Reels ter/qua 11h–13h e qui 18h–21h; Carrossel qua 12h. A referência final é Insights &gt; Horários mais ativos.</li>
+    </ul></div>
+    <div class="card-note"><h3>Produção em bloco</h3><ul>
+      <li>Uma gravação por semana cobre os 2 posts + material de Stories.</li>
+      <li>Grave sempre com a Vovó ou a equipe: conteúdo humano é o que mais rende em 2026.</li>
+      <li>Todo post mira acima do like: send, save, follow ou comment.</li>
+      <li>Legenda com a palavra-chave logo no começo (o Google indexa).</li>
+    </ul></div>
+  </div>
+  <div class="stories-strip">
+    <span class="st"><b>Stories diários:</b></span>
+    <span class="st">7h Abertura</span><span class="st">7h30 Produção</span><span class="st">8h Cardápio</span><span class="st">8h30 Item/Promoção</span><span class="st">11h Almoço pronto</span><span class="st">13h Bolo do dia</span><span class="st">15h Panorama</span><span class="st">16h Pão em breve</span><span class="st">18h Pão saindo</span>
+  </div>
+</div></section>
+
+<!-- SEMANA 1 -->
+<section><div class="wrap">
+  <div class="weekhead"><h2>Semana 1</h2><span class="tagline">Identidade e a Vovó no centro</span></div>
+  <div class="posts">
+    <div class="post prod">
+      <div class="top"><span class="badge">Produto</span><span class="fmt">Reel · 12–15s</span><span class="when">Ter · 11h</span></div>
+      <div class="hook">“O pão que sai quentinho às 6h da manhã em Itumbiara ↓”</div>
+      <div class="fw">Framework 3 · curiosity gap com payoff visível</div>
+      <div class="rowline"><b>Tema</b><span>Fornada da manhã: forno abrindo, vapor, pão indo pra prateleira, alguém partindo.</span></div>
+      <div class="rowline"><b>Texto tela</b><span>“Todo dia às 6h” → “Feito como a Vovó faz”</span></div>
+      <div class="rowline"><b>Legenda</b><span>“Pão quentinho todo dia às 6h na Vovó Vaci, a padaria de Itumbiara com 87 anos de sabor caseiro. Marca quem você traria pra tomar café 👇”</span></div>
+      <div class="rowline"><b>Hashtags</b><span class="tags">#padaria #itumbiara #paoquentinho #cafedamanha</span></div>
+      <div class="rowline"><b>Ação</b><span class="cta">Send</span></div>
+    </div>
+    <div class="post trad">
+      <div class="top"><span class="badge">Tradição</span><span class="fmt">Carrossel · 6–8 slides</span><span class="when">Qua · 12h</span></div>
+      <div class="hook">“87 anos de gosto de casa. Conheça a Vovó Vaci.”</div>
+      <div class="fw">Framework 5 · lista/promessa · slide 2: “Toda padaria vende pão. Só uma tem a Vovó.”</div>
+      <div class="rowline"><b>Tema</b><span>A história em fotos: a Vovó, a cozinha, a equipe de hoje, o pão. Uma frase de afeto por slide.</span></div>
+      <div class="rowline"><b>Fecho</b><span>Slide 7 “Marca quem cresceu comendo comida de vó.” · Slide 8 endereço + convite.</span></div>
+      <div class="rowline"><b>Legenda</b><span>“A Vovó Vaci tem 87 anos e um jeito de cozinhar que virou a história de uma cidade. Esse gosto de casa você encontra na nossa padaria em Itumbiara. Marca alguém que ama comida de vó.”</span></div>
+      <div class="rowline"><b>Hashtags</b><span class="tags">#vovovaci #itumbiara #tradicao #comidacaseira</span></div>
+      <div class="rowline"><b>Ação</b><span class="cta">Send</span></div>
+    </div>
+  </div>
+</div></section>
+
+<!-- SEMANA 2 -->
+<section><div class="wrap">
+  <div class="weekhead"><h2>Semana 2</h2><span class="tagline">Café colonial e o convite pra quem nunca entrou</span></div>
+  <div class="posts">
+    <div class="post conv">
+      <div class="top"><span class="badge">Conversão</span><span class="fmt">Reel · 12–15s</span><span class="when">Ter · 11h</span></div>
+      <div class="hook">“Sábado tem café colonial na Vovó Vaci, e a mesa começa assim ↓”</div>
+      <div class="fw">Framework 3 · curiosity gap</div>
+      <div class="rowline"><b>Tema</b><span>A mesa do café colonial sendo montada: pães, bolos, frios, frutas, o café passado.</span></div>
+      <div class="rowline"><b>Texto tela</b><span>“Das 6h às 10h · R$ 54,90 o kg” → “Salva e vem sábado”</span></div>
+      <div class="rowline"><b>Legenda</b><span>“Café colonial de sábado em Itumbiara: pão quentinho, bolo, frios, fruta e café passado na hora. Das 6h às 10h, R$ 54,90 o quilo. Salva o post e chama a família 👇”</span></div>
+      <div class="rowline"><b>Hashtags</b><span class="tags">#cafecolonial #itumbiara #padaria #cafedamanha</span></div>
+      <div class="rowline"><b>Ação</b><span class="cta">Save</span></div>
+    </div>
+    <div class="post proof">
+      <div class="top"><span class="badge">Prova</span><span class="fmt">Reel · 15–20s</span><span class="when">Qui · 19h</span></div>
+      <div class="hook">“Você já passou na frente da Vovó Vaci, mas nunca entrou?”</div>
+      <div class="fw">Framework 1 · pergunta direta</div>
+      <div class="rowline"><b>Tema</b><span>Fachada → a câmera entra e mostra balcão, café colonial, almoço, a Vovó atendendo, cliente feliz.</span></div>
+      <div class="rowline"><b>Texto tela</b><span>Fecho: “Da próxima, entra. A gente te espera.”</span></div>
+      <div class="rowline"><b>Legenda</b><span>“Tem gente que passa todo dia na frente da Vovó Vaci e nunca entrou. Aqui é café colonial, almoço caseiro, pão quentinho e 87 anos de história. Marca quem precisa vir com você.”</span></div>
+      <div class="rowline"><b>Hashtags</b><span class="tags">#itumbiara #padaria #cafecolonial #comidacaseira</span></div>
+      <div class="rowline"><b>Ação</b><span class="cta">Send</span></div>
+    </div>
+  </div>
+</div></section>
+
+<!-- SEMANA 3 -->
+<section><div class="wrap">
+  <div class="weekhead"><h2>Semana 3</h2><span class="tagline">Almoço de verdade e a mão que faz</span></div>
+  <div class="posts">
+    <div class="post prod">
+      <div class="top"><span class="badge">Produto</span><span class="fmt">Carrossel · 5–7 slides</span><span class="when">Ter · 11h</span></div>
+      <div class="hook">“O almoço da semana na Vovó Vaci (salva pra escolher seu dia)”</div>
+      <div class="fw">Framework 5 · lista com promessa</div>
+      <div class="rowline"><b>Tema</b><span>Um slide por dia da semana com o prato-destaque; slide final “tudo caseiro, feito na hora”.</span></div>
+      <div class="rowline"><b>Texto tela</b><span>Cada slide: dia + prato + “no capricho”.</span></div>
+      <div class="rowline"><b>Legenda</b><span>“Almoço caseiro de segunda a sábado na Vovó Vaci, em Itumbiara. Comida de verdade, feita na hora. Salva pra lembrar do seu dia favorito 👇”</span></div>
+      <div class="rowline"><b>Hashtags</b><span class="tags">#almoco #itumbiara #comidacaseira #pratofeito</span></div>
+      <div class="rowline"><b>Ação</b><span class="cta">Save</span></div>
+    </div>
+    <div class="post trad">
+      <div class="top"><span class="badge">Tradição</span><span class="fmt">Reel · 15–20s</span><span class="when">Qui · 19h</span></div>
+      <div class="hook">“Por que a comida daqui tem gosto de casa? A Vovó responde.”</div>
+      <div class="fw">Framework 1 · pergunta direta · a Vovó fala à câmera</div>
+      <div class="rowline"><b>Tema</b><span>A Vovó (ou a equipe) na cozinha, mão na massa, contando o segredo/carinho do preparo. Som real.</span></div>
+      <div class="rowline"><b>Texto tela</b><span>Fecho: “Feito como a Vovó faz. Todo dia.”</span></div>
+      <div class="rowline"><b>Legenda</b><span>“O segredo do gosto de casa da Vovó Vaci? 87 anos fazendo com carinho e feito na hora. Vem provar na nossa padaria em Itumbiara. Segue pra mais bastidores 🧡”</span></div>
+      <div class="rowline"><b>Hashtags</b><span class="tags">#vovovaci #bastidores #comidacaseira #itumbiara</span></div>
+      <div class="rowline"><b>Ação</b><span class="cta">Follow</span></div>
+    </div>
+  </div>
+</div></section>
+
+<!-- SEMANA 4 -->
+<section><div class="wrap">
+  <div class="weekhead"><h2>Semana 4</h2><span class="tagline">Queridinhos e o caminho pro pedido</span></div>
+  <div class="posts">
+    <div class="post prod">
+      <div class="top"><span class="badge">Produto</span><span class="fmt">Reel · 12–15s</span><span class="when">Ter · 11h</span></div>
+      <div class="hook">“Pão de queijo feito na hora, do jeitinho que a gente ama.”</div>
+      <div class="fw">Framework 3 · payoff visível (o vapor, o recheio puxando)</div>
+      <div class="rowline"><b>Tema</b><span>Close no pão de queijo saindo, partindo no meio, o vapor. Uma xícara de café ao lado.</span></div>
+      <div class="rowline"><b>Texto tela</b><span>“Sai quentinho várias vezes ao dia”</span></div>
+      <div class="rowline"><b>Legenda</b><span>“Pão de queijo feito na hora na Vovó Vaci, em Itumbiara. Aquele que puxa e tem gosto de café da tarde de vó. Marca quem come 3 sem perceber 👇”</span></div>
+      <div class="rowline"><b>Hashtags</b><span class="tags">#paodequeijo #itumbiara #padaria #cafedatarde</span></div>
+      <div class="rowline"><b>Ação</b><span class="cta">Send</span></div>
+    </div>
+    <div class="post conv">
+      <div class="top"><span class="badge">Conversão</span><span class="fmt">Carrossel · 5–6 slides</span><span class="when">Qua · 12h</span></div>
+      <div class="hook">“Tudo que você pode pedir pela Vovó Vaci sem sair de casa”</div>
+      <div class="fw">Framework 5 · lista/utilidade</div>
+      <div class="rowline"><b>Tema</b><span>Um slide por serviço: café colonial, almoço, encomenda de bolo, salgado de festa, tábua de frios. Slide final: “Chama no WhatsApp”.</span></div>
+      <div class="rowline"><b>Texto tela</b><span>Slide final com o número e “link na bio”.</span></div>
+      <div class="rowline"><b>Legenda</b><span>“Da Vovó Vaci pra sua casa ou sua festa: café colonial, almoço, bolos, salgados e tábua de frios. É só chamar no WhatsApp ou tocar no link da bio. Salva pra quando precisar 👇”</span></div>
+      <div class="rowline"><b>Hashtags</b><span class="tags">#itumbiara #encomendas #padaria #delivery</span></div>
+      <div class="rowline"><b>Ação</b><span class="cta">Clique/DM</span></div>
+    </div>
+  </div>
+</div></section>
+
+<section><div class="wrap">
+  <div class="eyebrow" style="color:var(--wood)">Balanço do mês</div>
+  <h2 style="margin:.2em 0 .4em">O que essa grade entrega</h2>
+  <div class="panel">
+    <div class="card-note"><h3>Equilíbrio de pilares</h3><ul>
+      <li>Produto: 3 posts (o que dá fome e visita)</li>
+      <li>Tradição &amp; gente: 2 posts (o vínculo, a Vovó)</li>
+      <li>Prova &amp; comunidade: 1 post (quem nunca entrou)</li>
+      <li>Conversão: 2 posts (café colonial e o cardápio)</li>
+    </ul></div>
+    <div class="card-note"><h3>Regra de ouro</h3><p>Mesmo com 2 posts de conversão, nunca é só oferta. São os pilares de produto e tradição que fazem a oferta converter. E os Stories diários é que mantêm a marca no topo da cabeça o mês inteiro.</p></div>
+  </div>
+  <p style="margin-top:16px;font-size:13.5px;color:var(--muted)">Quando o volume crescer (mês 4, plano maior), a mesma grade escala para 4–5 posts por semana, adicionando mais Reels de produto e um segundo carrossel de autoridade por semana.</p>
+</div></section>
+
+<footer><div class="wrap">Vovó Vaci × Vistrum · grade editorial do mês 1 · roteiros completos no arquivo 05 · Stories no arquivo 17</div></footer>
+
+<script>(function(){var b=document.getElementById('tg');function cur(){var s=document.documentElement.getAttribute('data-theme');if(s)return s;return matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light';}b.onclick=function(){document.documentElement.setAttribute('data-theme',cur()==='dark'?'light':'dark');};})();</script>
