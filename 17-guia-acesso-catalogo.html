@@ -1,0 +1,165 @@
+<title>Guia da Call · Acesso ao Catálogo</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+  :root{
+    --board:#1E3A34; --board2:#2A5049; --wood:#C98A4B; --marigold:#E9A62E; --sky:#2F7DA8;
+    --paper:#FBFAF7; --card:#FFFFFF; --ink:#1E2A30; --muted:#63727A; --line:#E7E1D6;
+    --good:#2E8B57; --warn:#C9761F;
+    --sans:"Segoe UI",system-ui,-apple-system,Arial,sans-serif;
+  }
+  :root:not([data-theme="light"]){}
+  @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+    --paper:#12191B; --card:#182326; --ink:#EAF0F0; --muted:#93A2A6; --line:#26343A;
+  }}
+  :root[data-theme="dark"]{--paper:#12191B; --card:#182326; --ink:#EAF0F0; --muted:#93A2A6; --line:#26343A;}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:var(--sans);background:var(--paper);color:var(--ink);line-height:1.55;padding:0 0 60px}
+  .wrap{max-width:820px;margin:0 auto;padding:0 20px}
+  header{background:var(--board);color:#F2EFE7;padding:30px 0 26px;margin-bottom:24px}
+  header .wrap{padding-top:0}
+  .eyebrow{font-size:12px;letter-spacing:.18em;text-transform:uppercase;font-weight:800;color:var(--marigold)}
+  header h1{font-size:clamp(24px,4vw,34px);margin:6px 0 6px;line-height:1.1}
+  header p{color:#CBD8D2;max-width:60ch;font-size:15px}
+  h2{font-size:19px;color:var(--board);margin:26px 0 6px;display:flex;align-items:center;gap:10px}
+  h2 .num{background:var(--board);color:#fff;width:30px;height:30px;border-radius:8px;display:inline-grid;place-items:center;font-size:15px;flex:0 0 auto}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px 18px;margin:10px 0}
+  ol{margin:6px 0 6px 20px}li{margin:6px 0}
+  ul.plain{list-style:none;margin:6px 0}
+  ul.plain li{padding-left:22px;position:relative}
+  ul.plain li:before{content:"☐";position:absolute;left:0;color:var(--muted)}
+  .path{font-family:ui-monospace,Consolas,monospace;font-size:13px;background:rgba(47,125,168,.10);border:1px solid rgba(47,125,168,.25);color:var(--sky);border-radius:6px;padding:2px 7px;display:inline-block;margin:1px 0}
+  .branch{border-left:4px solid var(--marigold);background:rgba(233,166,46,.08);padding:12px 15px;border-radius:0 10px 10px 0;margin:10px 0}
+  .branch.yes{border-color:var(--good);background:rgba(46,139,87,.09)}
+  .branch.no{border-color:var(--warn);background:rgba(201,118,31,.09)}
+  .branch b{display:block;margin-bottom:4px}
+  .say{background:var(--board2);color:#EAF3EF;border-radius:10px;padding:12px 15px;margin:8px 0;font-style:italic}
+  .tag{display:inline-block;font-size:11px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;padding:2px 9px;border-radius:99px;background:var(--marigold);color:#3a2a08;margin-left:6px;vertical-align:middle}
+  .gloss dt{font-weight:800;color:var(--board);margin-top:8px}
+  .gloss dd{color:var(--muted);font-size:14px;margin-left:0}
+  .mini{color:var(--muted);font-size:13px}
+  .toggle{position:fixed;top:14px;right:14px;border:1px solid var(--line);background:var(--card);color:var(--ink);border-radius:99px;padding:7px 13px;font:600 13px var(--sans);cursor:pointer}
+</style>
+
+<button class="toggle" id="tg">Tema</button>
+
+<header>
+  <div class="wrap">
+    <div class="eyebrow">Guia da call · uso do João</div>
+    <h1>Acesso ao catálogo do WhatsApp — passo a passo</h1>
+    <p>Abra numa segunda tela e vá seguindo com a Alyne. Objetivo da call: sair com acesso para editar o catálogo, sem pegar senha nem o número dela.</p>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <div class="say">Comece tranquilizando: "Alyne, não preciso da sua senha nem do número do WhatsApp. Só de uma permissão no catálogo — e você pode tirar meu acesso quando quiser, com um clique."</div>
+
+  <h2><span class="num">0</span> Antes de começar</h2>
+  <div class="card">
+    <ul class="plain">
+      <li>Peça pra Alyne estar, de preferência, <b>no computador</b> (facilita o Meta). O celular com o app WhatsApp Business também serve.</li>
+      <li>Tenha à mão o <b>seu e-mail</b> (o que você vai querer usar pra gerenciar).</li>
+      <li>Combine: você vai só <b>guiando</b>; ela clica (ou compartilha a tela).</li>
+    </ul>
+  </div>
+
+  <h2><span class="num">1</span> Verificar o que já existe</h2>
+  <div class="card">
+    <p><b>1.1 — O catálogo existe?</b> (já sabemos que sim, mas confirmem juntos)</p>
+    <p>No celular, app <b>WhatsApp Business</b>:</p>
+    <p><span class="path">Configurações › Ferramentas comerciais › Catálogo</span></p>
+    <p class="mini">Aparecem os produtos? Então o catálogo existe. ✅</p>
+    <hr style="border:none;border-top:1px solid var(--line);margin:12px 0">
+    <p><b>1.2 — Ele está ligado à Meta (Gerenciador de Negócios)?</b></p>
+    <ol>
+      <li>Pergunte à Alyne: <i>"Vocês já impulsionaram post no Instagram/Facebook, ou alguém já cuidou de anúncio?"</i> Se sim, quase certeza que existe um <b>Gerenciador de Negócios</b>.</li>
+      <li>No computador, acesse <span class="path">business.facebook.com</span> (ela loga com o Facebook da loja).</li>
+      <li>Vá em <span class="path">Configurações do negócio</span> (ícone de engrenagem / "Business settings").</li>
+      <li>Procure, no menu lateral, <span class="path">Fontes de dados › Catálogos</span> (ou "Data sources › Catalogs").</li>
+      <li>O catálogo da Peter aparece na lista?</li>
+    </ol>
+    <div class="branch yes"><b>✅ SE APARECE</b> → pule para o Passo 2 (dar acesso a você).</div>
+    <div class="branch no"><b>⚠️ SE NÃO APARECE (ou não têm Business)</b> → vá para o Passo 3 (criar/conectar).</div>
+  </div>
+
+  <h2><span class="num">2</span> Já existe no Meta → me dar acesso <span class="tag">caminho ideal</span></h2>
+  <div class="card">
+    <p>Tudo feito pela Alyne, com você guiando, em <span class="path">business.facebook.com › Configurações do negócio</span>:</p>
+    <ol>
+      <li><b>Adicionar você como pessoa:</b> <span class="path">Pessoas › Adicionar</span> → digite o seu e-mail → convidar.</li>
+      <li><b>Dar acesso ao catálogo:</b> menu <span class="path">Fontes de dados › Catálogos</span> → clique no catálogo da Peter → aba <span class="path">Pessoas / Atribuir parceiros</span> → adicione você → permissão <b>"Gerenciar catálogo"</b>.</li>
+      <li><b>Você aceita o convite:</b> chega no seu e-mail (ou em business.facebook.com › notificações). Aceite.</li>
+      <li><b>Testar:</b> abra o <span class="path">Gerenciador de Comércio</span> (business.facebook.com/commerce) → veja o catálogo → edite um item de teste (ex.: mude uma descrição) → salve.</li>
+    </ol>
+    <p class="mini">Deu certo o teste? Então você já pode organizar tudo depois, do seu computador, sem tocar no telefone dela.</p>
+  </div>
+
+  <h2><span class="num">3</span> Não existe no Meta → criar e conectar</h2>
+  <div class="card">
+    <p><b>Opção oficial (recomendada) — a Alyne cria, você guia:</b></p>
+    <ol>
+      <li><b>Criar o Gerenciador de Negócios:</b> <span class="path">business.facebook.com › Criar conta</span> → nome "Peter Brinquedos", e-mail dela.</li>
+      <li><b>Conectar Página e Instagram</b> da Peter (se tiverem) dentro do Business.</li>
+      <li><b>Criar o catálogo:</b> abra o <span class="path">Gerenciador de Comércio</span> → <span class="path">Criar catálogo</span> → tipo <b>"E-commerce"</b> → nome "Catálogo Peter".</li>
+      <li><b>Ligar o WhatsApp ao catálogo:</b> no app WhatsApp Business → <span class="path">Configurações › Ferramentas comerciais › Catálogo</span> → procure a opção de <b>gerenciar/conectar pela Meta</b> (vincular à conta do Gerenciador de Negócios).</li>
+      <li><b>Me adicionar como usuário</b> do catálogo (repita o Passo 2).</li>
+    </ol>
+    <p class="mini">Isso leva uns 10–15 min. Se o tempo apertar, use o Plano B abaixo pra não travar, e faça o Meta depois com calma.</p>
+  </div>
+
+  <h2><span class="num">4</span> Plano B — sempre funciona <span class="tag">sem depender do Meta</span></h2>
+  <div class="card">
+    <p>Se nada do Meta rolar na hora, <b>não travamos</b>: a Alyne compartilha a tela do celular e você conduz a edição direto no app:</p>
+    <p><span class="path">WhatsApp Business › Configurações › Ferramentas comerciais › Catálogo</span></p>
+    <ul class="plain">
+      <li>Criar/editar <b>coleções</b> (categorias)</li>
+      <li>Renomear produtos e trocar descrições</li>
+      <li>Trocar fotos e ajustar preços</li>
+    </ul>
+    <p class="mini">Serve pra já começar hoje. O acesso pela Meta é o upgrade pra você fazer sozinho depois.</p>
+  </div>
+
+  <h2><span class="num">5</span> Assim que tiver acesso — primeiros ajustes</h2>
+  <div class="card">
+    <ul class="plain">
+      <li>Reordenar as coleções: <b>idade e educativos no topo</b>, enxoval e organização no fim.</li>
+      <li>Renomear os <b>10 produtos-herói</b> no padrão <b>Nome • idade • habilidade</b>.</li>
+      <li>Trocar as fotos com <b>preço queimado</b> por foto limpa (começando pela "Oferta Exclusiva").</li>
+    </ul>
+    <p class="mini">Tudo isso já está detalhado nos documentos "Auditoria do Catálogo" e "Catálogo Reescrito".</p>
+  </div>
+
+  <h2><span class="num">6</span> Checklist da call</h2>
+  <div class="card">
+    <ul class="plain">
+      <li>Catálogo existe? (sim / não)</li>
+      <li>Têm Gerenciador de Negócios? (sim / não)</li>
+      <li>O catálogo aparece no Gerenciador de Comércio? (sim / não)</li>
+      <li>Fui adicionado como usuário do catálogo?</li>
+      <li>Testei a edição (mudei um item de teste)?</li>
+    </ul>
+    <p class="mini"><b>Anotar:</b> o e-mail usado no Business · o nome do catálogo · o ID do catálogo (aparece no Gerenciador de Comércio).</p>
+  </div>
+
+  <h2><span class="num">7</span> Glossário (o que você vai ver na tela)</h2>
+  <div class="card gloss">
+    <dl>
+      <dt>Meta Business Suite / Gerenciador de Negócios</dt><dd>O painel central da Meta (business.facebook.com) que conecta Página, Instagram, WhatsApp e catálogos.</dd>
+      <dt>Gerenciador de Comércio (Commerce Manager)</dt><dd>Onde o catálogo é criado e editado de verdade, pelo computador.</dd>
+      <dt>Catálogo</dt><dd>A lista de produtos (o mesmo que aparece no WhatsApp).</dd>
+      <dt>Coleção</dt><dd>Uma categoria dentro do catálogo (ex.: "Educativos por idade").</dd>
+      <dt>Fontes de dados / Data sources</dt><dd>Seção onde os catálogos ficam listados no Business Settings.</dd>
+      <dt>Permissão / Função</dt><dd>O nível de acesso que a Alyne te dá (queremos "Gerenciar catálogo").</dd>
+    </dl>
+    <p class="mini">Os nomes podem variar entre português e inglês conforme o idioma da conta — o caminho e o que procurar são os mesmos.</p>
+  </div>
+
+  <div class="say" style="margin-top:20px">Se algo não bater com o que está na tela dela, respira: o <b>Plano B</b> (tela compartilhada) cobre a call de qualquer jeito. O acesso Meta a gente finaliza com calma depois.</div>
+
+</div>
+
+<script>
+  var b=document.getElementById('tg');
+  function cur(){var s=document.documentElement.getAttribute('data-theme');return s?s:(matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light');}
+  b.onclick=function(){document.documentElement.setAttribute('data-theme',cur()==='dark'?'light':'dark');};
+</script>
