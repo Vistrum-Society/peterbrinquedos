@@ -104,6 +104,10 @@
   .post .photo{position:absolute;inset:0;z-index:1;background:linear-gradient(160deg,#E9F2F8,#CFE2EE)}
   .p1{background:var(--orange)}.p2{background:var(--blue)}.p3{background:var(--yellow)}
   .p4{background:var(--green)}.p5{background:var(--red)}.p6{background:var(--magenta)}
+  /* imagens reais (sobrepoem o mockup; se o arquivo nao existir, o mockup aparece) */
+  .post-real{position:absolute;inset:0;z-index:5;width:100%;height:100%;object-fit:cover;display:block}
+  .logo-real{max-width:230px;width:60%;height:auto;display:block;margin:0 auto}
+  .ph-real{position:absolute;inset:0;z-index:2;width:100%;height:100%;object-fit:cover;display:block}
 
   .approw{display:grid;grid-template-columns:200px 1fr;gap:22px;align-items:start}
   @media(max-width:640px){.approw{grid-template-columns:1fr}}
@@ -130,7 +134,10 @@
   <div class="wrap">
     <div class="kicker">Manual de Marca · v2 · 2026</div>
     <div style="margin:22px 0 6px">
-      <div class="logo-lock">
+      <!-- LOGO REAL: salve o PNG como "logo-peter.png" ao lado deste arquivo. -->
+      <img class="logo-real" src="logo-peter.png" alt="Peter Brinquedos"
+           onerror="this.style.display='none';this.nextElementSibling.style.display='inline-flex'">
+      <div class="logo-lock" style="display:none">
         <div class="logo-word word"><span class="lw-blue">P</span><span class="lw-red">E</span><span class="lw-yellow">T</span><span class="lw-green">E</span><span class="lw-blue">R</span></div>
         <div class="sub">BRINQUEDOS</div>
         <div class="tag">BRINCOU, APRENDEU!</div>
@@ -168,9 +175,18 @@
 <section id="logo"><div class="wrap">
   <div class="eyebrow">02 · Logo</div>
   <h2>A marca em forma</h2>
-  <p class="lead">O wordmark colorido é a assinatura principal. As letras seguem as cores da marca, com contorno branco para saltar sobre qualquer fundo.</p>
+  <p class="lead">A logo principal é o selo completo: mascote (ursinho + trem + blocos) com o wordmark colorido e a faixa "Brincou, Aprendeu!". As letras seguem as cores da marca, com contorno branco para saltar sobre qualquer fundo.</p>
 
-  <div class="grid3" style="margin-top:16px">
+  <div class="logobox lb-light" style="margin-top:16px;min-height:200px">
+    <img class="logo-real" src="logo-peter.png" alt="Logo principal Peter Brinquedos" style="max-width:300px;width:70%"
+         onerror="this.style.display='none';this.nextElementSibling.style.display='inline-flex'">
+    <div class="logo-lock" style="display:none"><div class="logo-word" style="font-size:48px"><span class="lw-blue">P</span><span class="lw-red">E</span><span class="lw-yellow">T</span><span class="lw-green">E</span><span class="lw-blue">R</span></div><div style="font-weight:800;letter-spacing:.28em;font-size:13px;color:var(--ink)">BRINQUEDOS</div></div>
+  </div>
+  <div class="cap">Logo principal (selo completo) · use sobre fundo claro, com respiro em volta</div>
+
+  <h3 style="margin-top:24px">Variações do wordmark</h3>
+  <p class="cap" style="text-align:left">Para espaços pequenos ou fundos coloridos, use o wordmark limpo (sem o mascote).</p>
+  <div class="grid3" style="margin-top:12px">
     <div><div class="logobox lb-light"><div class="logo-lock"><div class="logo-word" style="font-size:36px"><span class="lw-blue" style="text-shadow:0 0 0">P</span><span class="lw-red">E</span><span class="lw-yellow">T</span><span class="lw-green">E</span><span class="lw-blue">R</span></div><div style="font-weight:800;letter-spacing:.28em;font-size:11px;color:var(--ink)">BRINQUEDOS</div></div></div><div class="cap">Principal · sobre claro</div></div>
     <div><div class="logobox lb-dark"><div class="logo-lock"><div class="logo-word" style="font-size:36px"><span class="lw-blue">P</span><span class="lw-red">E</span><span class="lw-yellow">T</span><span class="lw-green">E</span><span class="lw-blue">R</span></div><div style="font-weight:800;letter-spacing:.28em;font-size:11px;color:#fff">BRINQUEDOS</div></div></div><div class="cap">Sobre fundo escuro</div></div>
     <div><div class="logobox lb-color"><div class="logo-lock"><div class="logo-word" style="font-size:36px;color:#fff"><span style="color:#fff">P</span><span style="color:#fff">E</span><span style="color:#fff">T</span><span style="color:#fff">E</span><span style="color:#fff">R</span></div><div style="font-weight:800;letter-spacing:.28em;font-size:11px;color:#fff">BRINQUEDOS</div></div></div><div class="cap">Monocromático (1 cor)</div></div>
@@ -190,7 +206,7 @@
       </ul>
     </div>
   </div>
-  <p class="cap" style="text-align:left;margin-top:12px">Versão com mascote (ursinho + trem) fica reservada para peças especiais (embalagem, fachada de estoque, brindes). No digital, priorize o wordmark limpo.</p>
+  <p class="cap" style="text-align:left;margin-top:12px">Regra prática: use a <b>logo completa (com mascote)</b> quando houver espaço e fundo calmo (perfil, capa, link na bio, embalagem, fachada). Em espaços apertados ou sobre foto cheia, use o <b>wordmark limpo</b> com contorno.</p>
 </div></section>
 
 <!-- ================= CORES ================= -->
@@ -267,7 +283,7 @@
   <h2>A criança feliz é a heroína</h2>
   <p class="lead">Toda peça nasce de uma foto de criança brincando com o brinquedo real: cor viva, luz alegre, emoção verdadeira. A foto ocupa a peça inteira.</p>
   <div class="grid2" style="margin-top:16px">
-    <div><div class="photoframe">Criança + brinquedo · luz clara · full-bleed</div><p class="cap">✔ Assim: espontânea, colorida, sorrindo</p></div>
+    <div><div class="photoframe"><img class="ph-real" src="post-carriola.jpg" alt="Exemplo de foto correta" onerror="this.remove()">Criança + brinquedo · luz clara · full-bleed</div><p class="cap">✔ Assim: espontânea, colorida, sorrindo</p></div>
     <div><div class="photoframe no">Foto escura · cenário poluído · sem vida</div><p class="cap">✕ Evite: fundo bagunçado, luz apagada, pose forçada</p></div>
   </div>
   <div class="card" style="margin-top:16px"><ul class="ph-tips"><li>Luz do dia, cores vivas, criança em movimento.</li><li>Foto preenche o fundo inteiro (nunca "presa" numa caixinha).</li><li>Deixe espaço livre em cima para o título.</li><li>Produção pelo pipeline de IA (criança + brinquedo) finalizada no template.</li></ul></div>
@@ -291,13 +307,14 @@
   <p class="lead">O sistema montado: feed, Reels, Stories, destaques, catálogo e link na bio, todos com a mesma cara.</p>
 
   <h3 style="margin-top:20px">Feed (posts)</h3>
-  <div class="feed">
-    <div class="post p1"><div class="photo"></div><div class="blob" style="width:90px;height:90px;background:var(--yellow);top:-24px;right:-14px"></div><div class="pt">Diversão que constrói!</div><div class="pl">PETER · Brincou, Aprendeu!</div></div>
-    <div class="post p2"><div class="photo"></div><div class="blob" style="width:90px;height:90px;background:#fff;opacity:.25;top:-24px;left:-14px"></div><div class="pt">Feito pra cada idade</div><div class="pl">PETER · Brincou, Aprendeu!</div></div>
-    <div class="post p3"><div class="photo"></div><div class="pt" style="color:#fff">Hoje tem chef!</div><div class="pl">PETER · Brincou, Aprendeu!</div></div>
-    <div class="post p4"><div class="photo"></div><div class="pt">Pequenos construtores</div><div class="pl">PETER</div></div>
-    <div class="post p5"><div class="photo"></div><div class="pt">Presente que ensina</div><div class="pl">PETER</div></div>
-    <div class="post p2"><div class="photo"></div><div class="pt">Acabou de chegar!</div><div class="pl">PETER</div></div>
+  <p class="cap" style="text-align:left">Peças reais da Peter. Salve seus criativos ao lado deste arquivo com os nomes abaixo.</p>
+  <div class="feed" style="margin-top:8px">
+    <div class="post p1"><img class="post-real" src="post-caminhao.jpg" alt="Diversão que constrói" onerror="this.remove()"><div class="photo"></div><div class="blob" style="width:90px;height:90px;background:var(--yellow);top:-24px;right:-14px"></div><div class="pt">Diversão que constrói!</div><div class="pl">PETER · Brincou, Aprendeu!</div></div>
+    <div class="post p2"><img class="post-real" src="post-boneca.jpg" alt="Feito pra cada fase" onerror="this.remove()"><div class="photo"></div><div class="blob" style="width:90px;height:90px;background:#fff;opacity:.25;top:-24px;left:-14px"></div><div class="pt">Feito pra cada idade</div><div class="pl">PETER · Brincou, Aprendeu!</div></div>
+    <div class="post p3"><img class="post-real" src="post-panelinha.jpg" alt="Cada brincadeira ensina algo" onerror="this.remove()"><div class="photo"></div><div class="pt" style="color:#fff">Hoje tem chef!</div><div class="pl">PETER · Brincou, Aprendeu!</div></div>
+    <div class="post p4"><img class="post-real" src="post-ferramentas.jpg" alt="Imaginação em ação" onerror="this.remove()"><div class="photo"></div><div class="pt">Pequenos construtores</div><div class="pl">PETER</div></div>
+    <div class="post p5"><img class="post-real" src="post-carrinho.jpg" alt="Hoje ela vira gente grande" onerror="this.remove()"><div class="photo"></div><div class="pt">Presente que ensina</div><div class="pl">PETER</div></div>
+    <div class="post p3"><img class="post-real" src="post-carriola.jpg" alt="Diversão que desenvolve" onerror="this.remove()"><div class="photo"></div><div class="pt">Acabou de chegar!</div><div class="pl">PETER</div></div>
   </div>
 
   <h3 style="margin-top:26px">Stories · Reels · Destaques</h3>
@@ -323,7 +340,7 @@
   <div class="grid2" style="margin-top:6px">
     <div class="card">
       <div style="display:flex;gap:12px;align-items:center">
-        <div class="photoframe" style="width:74px;aspect-ratio:1;border-radius:10px;font-size:9px">foto</div>
+        <div class="photoframe" style="width:74px;aspect-ratio:1;border-radius:10px;font-size:9px"><img class="ph-real" src="produto-exemplo.jpg" alt="Foto do produto" onerror="this.remove()">foto</div>
         <div><b style="font-size:14px">Fogãozinho de Madeira Newart</b><div style="font-size:12px;color:var(--muted)">3 a 7 anos · faz de conta</div><div style="font-weight:900;color:var(--ink);margin-top:4px">R$ 224,90</div></div>
       </div>
       <p class="cap" style="text-align:left;margin-top:10px">Padrão do item no catálogo: nome · idade · o que desenvolve · preço.</p>
