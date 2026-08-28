@@ -42,12 +42,16 @@ A loja que ajuda cada família a escolher o brinquedo certo para cada fase da cr
 - **Palavras que usamos:** diversão que ensina, aprender brincando, para cada idade, desenvolve, faz de conta, presente que ensina, pequenos exploradores, brincou aprendeu.
 - **Palavras que evitamos:** imperdível, promoção relâmpago, aproveite já, o melhor preço, baratinho, apelação/gíria em excesso.
 
-### Identidade visual
-- **Paleta:** Amarelo #FFC12E · Laranja #FF7A2E · Azul #1FA5E0 · Verde #54B948 · Vermelho #E7373C · Magenta #E7508A · Tinta (texto/contorno) #12386E · Papel/Neutro #FBFAF7. Poucas cores por peça; a cor de fundo varia entre os posts.
-- **Tipografia:** títulos em fonte gorda e arredondada, branca com **contorno tinta** (estilo adesivo) — Fredoka ou Baloo 2 (equivalente Nunito Black no Figma). Corpo: Inter ou Nunito.
+### Identidade visual (OFICIAL — manual de marca 2026)
+Fonte da verdade: `Manual-de-Marca-Peter-OFICIAL.pdf` (também em https://www.peterbrinquedos.com.br/manual-de-marca.pdf). Esta é a identidade vigente e substitui a versão colorida/multicolor que havia sido esboçada antes.
+- **Paleta:** Azul-marinho **#00355D** (cor base, carrega os textos) · Verde-água **#00E4AB** (o destaque/faísca: detalhes, chamadas) · Azul **#0071C7** (apoio) · Verde **#00BA8B** (apoio). Sempre o maior contraste com o fundo.
+- **Tipografia:** **Molypop** (redonda e cheia, caixa baixa) para o nome e os títulos; **Montserrat** para textos e legendas. Não substituir as fontes.
+- **Logo (sistema):** dois elementos que vivem juntos ou separados — o **emblema** (um ursinho que espia de dentro de um arco) + o **logotipo** "peter" em Molypop caixa baixa com "brinquedos educativos" abaixo. A **assinatura** (emblema + logotipo) é o padrão; o símbolo sozinho entra em espaços pequenos (perfil, favicon, selo). Nunca inventar uma terceira forma nem misturar fora dos arranjos do manual.
+- **Versões de cor:** principal (sobre claro), sobre escuro, sobre verde-água, e monocromática (só para impressão de 1 cor).
+- **Não fazer:** esticar/distorcer, usar cores fora da paleta, aplicar sombra ou brilho, girar.
 - **Foto é a heroína:** criança real e alegre com o brinquedo, luz clara, full-bleed.
-- **Anatomia do post:** moldura branca fina + 1-2 estrelas/brilhos no canto + eyebrow (#brinquedos educativos) + título adesivo + chip de CTA (pílula branca com ícone de lupa) + logo sempre no mesmo canto.
-- **Logo oficial:** selo com mascote (ursinho + trem + blocos) + wordmark PETER multicolor (P azul, E vermelho, T amarelo, E verde, R azul) + faixa "Brincou, Aprendeu!". Usar a logo completa quando há espaço/fundo calmo; wordmark limpo em espaços apertados.
+
+> NOTA DE TRANSIÇÃO: os materiais que a Vistrum já produziu (site/link na bio, os 6 criativos, o brand book em HTML e as 7 capas de destaque) foram feitos na identidade colorida ANTERIOR. Eles precisam ser realinhados à identidade oficial (azul-marinho + verde-água, Molypop). Tratar isso como tarefa em aberto.
 
 ## 5. Padrão de conteúdo (house style Vistrum, Instagram orgânico)
 - PT-BR. Um **CTA orgânico por post** (acima do "curta").
@@ -94,7 +98,7 @@ Suba estes arquivos (você os tem nas suas pastas / no GitHub). Prioridade **ess
 **Essenciais (contexto e padrão):**
 1. Este `BRIEFING-HANDOFF.md`
 2. `Fundacao-Marca-v2-Peter.pdf` (posicionamento + voz + identidade)
-3. `Manual-de-Marca-Peter-v2.pdf` (identidade visual completa)
+3. `Manual-de-Marca-Peter-OFICIAL.pdf` (identidade visual oficial vigente — usar esta, não a versão colorida antiga)
 4. `Grade-Editorial-30-dias-v2-Peter.pdf`
 5. `Ata-Reuniao-Avancos-Peter.pdf` e `Proximos-Passos-Peter.pdf`
 6. As anotações do Gemini da reunião (o .docx que o João tem)
