@@ -1,74 +1,74 @@
 <title>Peter Brinquedos · Comece por aqui</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
   :root{
-    --board:#1E3A34; --board2:#2A5049; --wood:#C98A4B; --marigold:#E9A62E;
-    --sky:#2F7DA8; --paper:#FBF8F2; --ink:#233240; --cream:#F3EFE4; --line:rgba(255,255,255,.14);
-    --sans:"Segoe UI",system-ui,-apple-system,Arial,sans-serif;
-    --serif:Georgia,"Times New Roman",serif;
+    /* Identidade oficial: azul-marinho base + verde-agua destaque */
+    --navy:#00355D; --teal:#00E4AB; --blue:#0071C7; --green:#00BA8B;
+    --paper:#FFFFFF; --ink:#00355D; --cream:#EAF2F8; --line:rgba(255,255,255,.16);
+    --sans:'Montserrat',"Segoe UI",system-ui,-apple-system,Arial,sans-serif;
   }
   *{box-sizing:border-box;margin:0;padding:0}
   body{
     font-family:var(--sans); color:var(--cream); min-height:100vh;
-    /* FOTO DE FUNDO: salve sua imagem como "fundo.png" ao lado deste arquivo (ou troque o nome abaixo). */
+    /* FOTO DE FUNDO: salve sua imagem como "fundo.png" ao lado deste arquivo. */
     background:
-      linear-gradient(180deg, rgba(15,26,22,.30), rgba(15,26,22,.50) 55%, rgba(15,26,22,.68)),
+      linear-gradient(180deg, rgba(0,28,52,.32), rgba(0,28,52,.55) 55%, rgba(0,28,52,.72)),
       url('fundo.png') center/cover no-repeat,
-      var(--board);
+      var(--navy);
     display:flex; justify-content:center; padding:26px 18px 40px;
   }
   .wrap{width:100%;max-width:440px;position:relative;display:flex;flex-direction:column;align-items:center;gap:18px}
 
-  /* logo card (troque pelo PNG real da Peter) */
+  /* LOGO: troque "logo-peter.png" pela logo OFICIAL (ursinho no arco) exportada do manual. */
   .logo{width:150px;height:150px;border-radius:28px;background:var(--paper);
     box-shadow:0 16px 40px -18px rgba(0,0,0,.55);display:flex;flex-direction:column;
     align-items:center;justify-content:center;gap:2px;overflow:hidden;text-align:center;padding:10px}
   .logo .em{font-size:38px;line-height:1}
-  .logo .n{font-family:var(--serif);font-weight:700;color:var(--sky);font-size:20px;letter-spacing:.3px;margin-top:2px}
-  .logo .t{font-size:9px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--wood)}
+  .logo .n{font-weight:800;color:var(--navy);font-size:20px;letter-spacing:.2px;margin-top:2px}
+  .logo .t{font-size:9px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--green)}
   .logo-img{object-fit:contain;padding:12px;display:block}
-  /* Para usar a logo real: substitua o bloco .logo por:
-     <img class="logo" src="LOGO_PETER.png" alt="Peter Brinquedos"> */
 
   .head{text-align:center}
-  .head h1{font-family:var(--serif);font-size:26px;line-height:1.1;margin-bottom:6px}
-  .head p{color:#CBD8D2;font-size:14.5px;max-width:32ch;margin:0 auto;line-height:1.45}
+  .head h1{font-weight:800;font-size:26px;line-height:1.15;margin-bottom:6px;color:#fff}
+  .head p{color:#CFE0EC;font-size:14.5px;max-width:32ch;margin:0 auto;line-height:1.45}
 
   .chips{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin-top:2px}
-  .chip{font-size:12px;font-weight:600;color:var(--cream);background:rgba(255,255,255,.07);
+  .chip{font-size:12px;font-weight:600;color:var(--cream);background:rgba(255,255,255,.08);
     border:1px solid var(--line);border-radius:999px;padding:6px 12px;text-decoration:none}
 
   .links{width:100%;display:flex;flex-direction:column;gap:12px;margin-top:4px}
   .btn{display:flex;align-items:center;gap:14px;text-decoration:none;border-radius:16px;
-    padding:16px 18px;font-weight:600;font-size:16px;transition:transform .12s ease,box-shadow .12s ease;
+    padding:16px 18px;font-weight:700;font-size:16px;transition:transform .12s ease,box-shadow .12s ease;
     border:1px solid transparent}
   .btn .ico{width:26px;height:26px;flex:0 0 auto;display:grid;place-items:center}
   .btn .lbl{flex:1;display:flex;flex-direction:column;line-height:1.15}
-  .btn .lbl small{font-weight:500;font-size:12.5px;opacity:.75}
+  .btn .lbl small{font-weight:500;font-size:12.5px;opacity:.8}
   .btn .arw{opacity:.5;font-size:18px}
   .btn:hover{transform:translateY(-2px)}
-  .btn:focus-visible{outline:3px solid var(--marigold);outline-offset:3px}
-  .primary{background:var(--marigold);color:#3a2a08;box-shadow:0 12px 28px -12px rgba(233,166,46,.7)}
+  .btn:focus-visible{outline:3px solid var(--teal);outline-offset:3px}
+  .primary{background:var(--teal);color:var(--navy);box-shadow:0 12px 28px -12px rgba(0,228,171,.65)}
   .solid{background:var(--paper);color:var(--ink)}
-  .ghost{background:rgba(255,255,255,.06);color:var(--cream);border-color:var(--line)}
+  .ghost{background:rgba(255,255,255,.08);color:var(--cream);border-color:var(--line)}
 
-  .note{width:100%;margin-top:-4px;text-align:center;color:#E9EFEC;font-size:12.5px;font-weight:600;
-    background:rgba(0,0,0,.28);border:1px solid var(--line);border-radius:12px;padding:9px 12px}
-  .foot{margin-top:14px;text-align:center;color:#D7E0DB;font-size:12.5px}
-  .foot b{color:var(--marigold);font-weight:700}
+  .note{width:100%;margin-top:-4px;text-align:center;color:#DCEBF4;font-size:12.5px;font-weight:600;
+    background:rgba(0,20,40,.42);border:1px solid var(--line);border-radius:12px;padding:9px 12px}
+  .foot{margin-top:14px;text-align:center;color:#CFE0EC;font-size:12.5px}
+  .foot b{color:var(--teal);font-weight:700}
   @media (prefers-reduced-motion:reduce){.btn{transition:none}}
 </style>
 
 <div class="wrap">
 
-  <!-- LOGO REAL: salve o PNG da logo da Peter como "logo-peter.png" ao lado deste arquivo.
-       Se o arquivo nao for encontrado, aparece o cartao de reserva abaixo automaticamente. -->
+  <!-- LOGO REAL: salve o PNG da logo OFICIAL da Peter como "logo-peter.png" ao lado deste arquivo. -->
   <img class="logo logo-img" src="logo-peter.png" alt="Peter Brinquedos"
        onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
   <div class="logo" role="img" aria-label="Peter Brinquedos" style="display:none">
-    <div class="em">🧸🚂</div>
-    <div class="n">Peter Brinquedos</div>
-    <div class="t">Brincou, Aprendeu!</div>
+    <div class="em">🧸</div>
+    <div class="n">peter</div>
+    <div class="t">Brinquedos Educativos</div>
   </div>
 
   <div class="head">
@@ -86,25 +86,25 @@
   <div class="links">
 
     <a class="btn primary" href="https://wa.me/5519988807411?text=Ol%C3%A1!%20Vim%20pelo%20link%20da%20Peter%20Brinquedos%20e%20quero%20uma%20ajudinha%20para%20escolher%20um%20brinquedo%20educativo.">
-      <span class="ico"><svg width="24" height="24" viewBox="0 0 24 24" fill="#3a2a08"><path d="M12 2a10 10 0 0 0-8.6 15l-1.3 4.7 4.8-1.3A10 10 0 1 0 12 2Zm5.6 14.2c-.2.6-1.2 1.2-1.7 1.2-.4 0-1 .1-3.2-.8-2.7-1.1-4.4-3.9-4.5-4.1-.1-.2-1-1.4-1-2.6 0-1.3.6-1.9.9-2.1.2-.2.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .5l-.4.6c-.1.2-.3.3-.1.6.1.3.7 1.1 1.4 1.8 1 .8 1.7 1 2 1.2.2.1.4.1.5-.1l.7-.8c.2-.2.3-.2.6-.1l1.9.9c.3.1.4.2.5.3 0 .2 0 .8-.2 1.4Z"/></svg></span>
+      <span class="ico"><svg width="24" height="24" viewBox="0 0 24 24" fill="#00355D"><path d="M12 2a10 10 0 0 0-8.6 15l-1.3 4.7 4.8-1.3A10 10 0 1 0 12 2Zm5.6 14.2c-.2.6-1.2 1.2-1.7 1.2-.4 0-1 .1-3.2-.8-2.7-1.1-4.4-3.9-4.5-4.1-.1-.2-1-1.4-1-2.6 0-1.3.6-1.9.9-2.1.2-.2.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .5l-.4.6c-.1.2-.3.3-.1.6.1.3.7 1.1 1.4 1.8 1 .8 1.7 1 2 1.2.2.1.4.1.5-.1l.7-.8c.2-.2.3-.2.6-.1l1.9.9c.3.1.4.2.5.3 0 .2 0 .8-.2 1.4Z"/></svg></span>
       <span class="lbl">Falar no WhatsApp<small>Fale com a gente e peça sua indicação</small></span>
       <span class="arw">›</span>
     </a>
 
     <a class="btn solid" href="https://wa.me/c/5519988807411">
-      <span class="ico"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1E3A34" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg></span>
+      <span class="ico"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#00355D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg></span>
       <span class="lbl">Ver catálogo completo<small>Todos os brinquedos, por idade</small></span>
-      <span class="arw" style="color:#1E3A34">›</span>
+      <span class="arw" style="color:#00355D">›</span>
     </a>
 
     <a class="btn ghost" href="https://www.instagram.com/peterbrinquedos/">
-      <span class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#F3EFE4" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.2" fill="#F3EFE4" stroke="none"/></svg></span>
+      <span class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#EAF2F8" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.2" fill="#EAF2F8" stroke="none"/></svg></span>
       <span class="lbl">Instagram<small>@peterbrinquedos</small></span>
       <span class="arw">›</span>
     </a>
 
     <a class="btn ghost" href="https://maps.app.goo.gl/M7pKX8Pk1SvYd5pJA">
-      <span class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#F3EFE4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg></span>
+      <span class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#EAF2F8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg></span>
       <span class="lbl">Onde ficamos<small>Nosso estoque</small></span>
       <span class="arw">›</span>
     </a>
@@ -112,5 +112,5 @@
 
   </div>
 
-  <div class="foot">Peter Brinquedos · <b>Brincou, Aprendeu!</b></div>
+  <div class="foot">Peter · Brinquedos Educativos · <b>Brincou, Aprendeu!</b></div>
 </div>
