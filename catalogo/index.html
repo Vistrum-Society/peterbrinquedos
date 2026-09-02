@@ -203,8 +203,8 @@
   <div class="dh"><b>Meu orçamento</b><button onclick="closeCart()">×</button></div>
   <div class="ditems" id="ditems"></div>
   <div class="dfoot">
-    <div class="drow tot"><span>Subtotal</span><span id="subtotal">R$ 0,00</span></div>
-    <div class="drow"><small style="color:var(--muted)">Sem compromisso. O valor final e o frete são combinados no WhatsApp.</small></div>
+    <div class="drow tot"><span>Itens no orçamento</span><span id="subtotal">0</span></div>
+    <div class="drow"><small style="color:var(--muted)">Sem compromisso. Os valores e o frete são combinados no WhatsApp.</small></div>
     <button class="sendwa" onclick="sendWhats()">💬 Enviar orçamento no WhatsApp</button>
     <button class="clearc" onclick="clearCart()">limpar orçamento</button>
   </div>
@@ -245,7 +245,7 @@ function card(p){
     <div class="body">
       <div class="cat">${p.categoria}</div>
       <div class="nm" onclick="openProduct('${p.sku}')">${p.nome}</div>
-      <div class="foot"><span class="price">${brl(p.preco)}</span>
+      <div class="foot" style="justify-content:flex-end">
         <button class="add" onclick="addItem('${p.sku}',1,true)">+ orçamento</button></div>
     </div></div>`;
 }
@@ -360,7 +360,6 @@ function openProduct(sku){
         <div class="tags"><span class="tag">👶 ${p.idadeTxt||p.faixa}</span><span class="tag">🧩 ${p.material}</span>${p.escolas?'<span class="tag">🏫 usado por escolas</span>':''}</div>
         <p class="desc">${p.descricao}</p>
         <div class="tags">${(p.desenvolve||[]).map(d=>`<span class="tag">${DEV[d]||d}</span>`).join('')}</div>
-        <div class="mprice">${brl(p.preco)}</div>
         <div class="qtyrow">
           <div class="qty"><button onclick="mq(-1)">−</button><span id="mqty">1</span><button onclick="mq(1)">+</button></div>
           <button class="bigadd" onclick="addItem('${p.sku}',+document.getElementById('mqty').textContent,true);closeModal()">Adicionar ao orçamento</button>
@@ -391,14 +390,14 @@ function renderCart(){
         <div class="qty"><button onclick="setQty('${p.sku}',${q-1})">−</button><span>${q}</span><button onclick="setQty('${p.sku}',${q+1})">+</button></div>
       </div><button class="drm" onclick="setQty('${p.sku}',0)">remover</button></div>`).join('')
     :'<div class="empty">Seu orçamento está vazio.<br>Explore o catálogo e vá adicionando 🧸</div>';
-  document.getElementById('subtotal').textContent=brl(subtotal());
+  document.getElementById('subtotal').textContent=Object.values(cart).reduce((a,b)=>a+b,0);
 }
 function sendWhats(){
   const items=cartList();
   if(!items.length){alert('Adicione brinquedos ao orçamento primeiro 🙂');return;}
   let msg='Olá! Montei um orçamento no site da Peter 🧸\n\n';
   items.forEach(({p,q})=>{msg+=`- ${p.nome} (cód. ${p.sku}) — Qtd: ${q}\n`});
-  msg+=`\nSubtotal: ${brl(subtotal())}\nGostaria de finalizar ou tirar dúvidas!`;
+  msg+=`\nPode me passar os valores e como funciona a entrega? 🙂`;
   window.open(`https://wa.me/${WA}?text=${encodeURIComponent(msg)}`,'_blank');
 }
 
