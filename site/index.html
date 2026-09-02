@@ -57,6 +57,15 @@
   .d1{background:linear-gradient(160deg,#FFF3D6,var(--wood))}
   .d2{background:linear-gradient(160deg,#CFF3EA,#8fe0cd)}
   .d3{background:linear-gradient(160deg,#CFE6F6,#9cc9ec)}
+  .herobg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.30;z-index:0}
+  .hero .inner{position:relative;z-index:2}
+  .door .doorimg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0}
+  .door .veil{position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,rgba(0,53,93,0) 25%,rgba(0,53,93,.85));opacity:0;pointer-events:none}
+  .door.hasimg .veil{opacity:1}
+  .door h3,.door small,.door .em{position:relative;z-index:2}
+  .door.hasimg h3,.door.hasimg small{color:#fff;text-shadow:0 1px 4px rgba(0,0,0,.45)}
+  .door.hasimg .em{display:none}
+  .sobreimg{width:100%;border-radius:16px;margin:14px 0 4px;box-shadow:var(--shadow);aspect-ratio:2/1;object-fit:cover}
 
   /* SECTIONS */
   section.blk{padding:44px 0}
@@ -214,7 +223,7 @@
 
 <script>
 const WA="5519988807411";
-const FAIXAS=[["0-2","0 a 2 anos","🍼"],["3-5","3 a 5 anos","🧒"],["6+","6 anos ou mais","🎒"]];
+const FAIXAS=[["0-2","0 a 2 anos","🍼","img/idade-0-2.jpg"],["3-5","3 a 5 anos","🧒","img/idade-3-5.jpg"],["6+","6 anos ou mais","🎒","img/idade-6.jpg"]];
 const DEV={coordenacao:"Coordenação",logica:"Lógica",linguagem:"Linguagem",criatividade:"Criatividade",socializacao:"Socialização",equilibrio:"Equilíbrio"};
 let PRODUCTS=[], cart=load();
 
@@ -263,6 +272,7 @@ function renderHome(app){
   const dest=PRODUCTS.slice(0,8);
   app.innerHTML=`
   <section class="hero">
+    <img class="herobg" src="img/hero-loja.jpg" alt="" onerror="this.remove()">
     <svg class="spark" style="top:26px;left:8%" width="30" height="30" viewBox="0 0 24 24" fill="#fff"><path d="M12 0l2.5 9.5L24 12l-9.5 2.5L12 24l-2.5-9.5L0 12l9.5-2.5z"/></svg>
     <div class="wrap inner">
       <img class="mark" src="VERTICAL-POSITIVA.png" alt="Peter" onerror="this.style.display='none'">
@@ -272,6 +282,8 @@ function renderHome(app){
   </section>
   <div class="doors">
     ${FAIXAS.map((f,i)=>`<div class="door d${i+1}" onclick="go('/catalogo?idade=${encodeURIComponent(f[0])}')">
+      <img class="doorimg" src="${f[3]}" alt="${f[1]}" onload="this.closest('.door').classList.add('hasimg')" onerror="this.remove()">
+      <span class="veil"></span>
       <span class="em">${f[2]}</span><h3>${f[1]}</h3><small>Ver brinquedos ›</small></div>`).join('')}
   </div>
   <section class="blk"><div class="wrap">
@@ -337,6 +349,7 @@ function renderCatalog(app,h){
 function renderSobre(app){
   app.innerHTML=`<section class="blk"><div class="wrap" style="max-width:760px">
     <div class="eyebrow">Sobre</div><h2 class="sec">A Peter</h2>
+    <img class="sobreimg" src="img/sobre.jpg" alt="Peter Brinquedos" onerror="this.remove()">
     <p style="font-size:16px;margin-top:8px">A Peter ajuda cada família a escolher o brinquedo certo para cada fase da criança. Aqui o brinquedo tem propósito: diverte enquanto ensina. É curadoria por idade, com qualidade segura e o olhar de quem entende de desenvolvimento infantil.</p>
     <div class="schools" style="margin-top:20px"><div class="ic">🏫</div><div><b>Confiança que vem da escola</b><p>Boa parte da nossa curadoria já é usada em escolas de educação infantil.</p></div></div>
     <div class="prop" style="margin-top:20px">
@@ -386,7 +399,7 @@ function renderCart(){
   const items=cartList();
   document.getElementById('ditems').innerHTML=items.length?items.map(({p,q})=>`
     <div class="ditem"><div class="tph">${phImg(p)}</div>
-      <div class="info"><b>${p.nome}</b><span class="p">${brl(p.preco)} · cód. ${p.sku}</span>
+      <div class="info"><b>${p.nome}</b><span class="p">${p.categoria} · cód. ${p.sku}</span>
         <div class="qty"><button onclick="setQty('${p.sku}',${q-1})">−</button><span>${q}</span><button onclick="setQty('${p.sku}',${q+1})">+</button></div>
       </div><button class="drm" onclick="setQty('${p.sku}',0)">remover</button></div>`).join('')
     :'<div class="empty">Seu orçamento está vazio.<br>Explore o catálogo e vá adicionando 🧸</div>';
